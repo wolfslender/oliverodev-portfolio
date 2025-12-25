@@ -1,0 +1,284 @@
+{
+  "hero": {
+    "title": {
+      "prefix": "Construyendo",
+      "highlight": "productos digitales, marcas y experiencias"
+    },
+    "roles": ["Líder Técnico", "Desarrollador Frontend", "Entusiasta de Seguridad Web", "Arquitecto Cloud"],
+    "description": "Desarrollador Frontend con más de 8 años de experiencia entregando soluciones web de alto impacto. Especializado en WordPress, Webflow y React, con un fuerte enfoque en construir arquitecturas escalables y mantenibles y crear experiencias de usuario excepcionales.",
+    "buttons": {
+      "primary": "Ver Trabajo",
+      "secondary": "Contactarme",
+      "downloadCv": "Descargar CV"
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "work": "Portafolio",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Desarrollador apasionado con más de 8 años de experiencia construyendo aplicaciones web modernas. Me encanta convertir problemas complejos en soluciones simples y hermosas.",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "softSkills": "Habilidades Blandas"
+  },
+  "stats": [
+    { "label": "Años de Experiencia" },
+    { "label": "Proyectos Entregados" },
+    { "label": "Satisfacción del Cliente" },
+    { "label": "Tiempos de Carga más Rápidos" }
+  ],
+  "featuredProjects": {
+    "badge": "Trabajos Seleccionados",
+    "titlePrefix": "Proyectos",
+    "titleHighlight": "Destacados",
+    "description": "Una selección de mis trabajos más recientes y significativos, demostrando mi experiencia en la construcción de aplicaciones web escalables.",
+    "viewAll": "Ver Todos los Proyectos"
+  },
+  "cta": {
+    "badge": "Disponible para nuevas oportunidades",
+    "titlePrefix": "Listo para lanzar tu",
+    "titleHighlight": "próxima gran idea?",
+    "description": "Colaboremos para construir una experiencia digital que no solo se vea increíble, sino que también genere resultados reales para tu negocio.",
+    "primaryButton": "Iniciar un Proyecto",
+    "secondaryButton": "Ver Portafolio"
+  },
+  "footer": {
+    "description": "Desarrollador Full Stack creando experiencias digitales hermosas con tecnologías modernas.",
+    "quickLinks": "Enlaces Rápidos",
+    "services": "Servicios",
+    "builtWith": "Construido con Next.js y Tailwind CSS.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "skills": {
+    "title": "Habilidades y Experiencia",
+    "description": "Un conjunto completo de herramientas para construir aplicaciones modernas y escalables",
+    "categories": {
+      "frontend": "Frontend",
+      "cms": "CMS y Plataformas",
+      "performance": "Rendimiento",
+      "tools": "Herramientas y DevOps",
+      "design": "Diseño",
+      "security": "Seguridad"
+    }
+  },
+  "certificationsPage": {
+    "titlePrefix": "Certificaciones y",
+    "titleHighlight": "Educación",
+    "description": "Logros de aprendizaje continuo y desarrollo profesional",
+    "issued": "Emitido:",
+    "id": "ID:"
+  },
+  "privacyPage": {
+    "title": "Política de Privacidad",
+    "description": "Cómo manejo tus datos y privacidad.",
+    "lastUpdated": "Última Actualización:",
+    "sections": {
+      "introduction": {
+        "title": "1. Introducción",
+        "content": "Bienvenido a mi portafolio. Respeto tu privacidad y estoy comprometido a proteger tus datos personales. Esta política de privacidad te informará sobre cómo cuido tus datos personales cuando visitas mi sitio web y te informará sobre tus derechos de privacidad y cómo la ley te protege."
+      },
+      "information": {
+        "title": "2. Información que Recopilo",
+        "content": "Actualmente, este sitio web de portafolio es principalmente informativo. Puedo recopilar datos de las siguientes maneras:",
+        "items": [
+          "Información de Contacto: Si utilizas el formulario de contacto o me envías un correo electrónico directamente, recopilaré tu nombre, dirección de correo electrónico y el contenido de tu mensaje para responder a tu consulta.",
+          "Datos de Uso: Puedo utilizar herramientas de análisis web estándar para comprender cómo los visitantes interactúan con el sitio. Estos datos son anónimos y me ayudan a mejorar la experiencia del usuario."
+        ]
+      },
+      "usage": {
+        "title": "3. Cómo Uso Tu Información",
+        "content": "Solo utilizo tus datos personales cuando la ley me lo permite. Comúnmente, utilizaré tus datos personales en las siguientes circunstancias:",
+        "items": [
+          "Para comunicarme contigo en respuesta a tus consultas.",
+          "Para mejorar la funcionalidad y el contenido del sitio web."
+        ]
+      },
+      "security": {
+        "title": "4. Seguridad de Datos",
+        "content": "He implementado medidas de seguridad adecuadas para evitar que tus datos personales se pierdan accidentalmente, se utilicen o se acceda a ellos de forma no autorizada, se alteren o se divulguen."
+      },
+      "links": {
+        "title": "5. Enlaces de Terceros",
+        "content": "Este sitio web puede incluir enlaces a sitios web de terceros (como GitHub, LinkedIn, etc.), complementos y aplicaciones. Hacer clic en esos enlaces o habilitar esas conexiones puede permitir que terceros recopilen o compartan datos sobre ti. No controlo estos sitios web de terceros y no soy responsable de sus declaraciones de privacidad."
+      },
+      "contact": {
+        "title": "6. Contáctame",
+        "content": "Si tienes alguna pregunta sobre esta política de privacidad o mis prácticas de privacidad, por favor contáctame en:"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Términos de Servicio",
+    "description": "Reglas y regulaciones para el uso de este sitio web.",
+    "lastUpdated": "Última Actualización:",
+    "sections": {
+      "agreement": {
+        "title": "1. Acuerdo de Términos",
+        "content": "Al acceder a este sitio web, aceptas estar sujeto a estos Términos y Condiciones de Uso del Sitio Web y aceptas que eres responsable del acuerdo con las leyes locales aplicables. Si no estás de acuerdo con alguno de estos términos, tienes prohibido el acceso a este sitio."
+      },
+      "ip": {
+        "title": "2. Derechos de Propiedad Intelectual",
+        "content": "Todo el contenido, características y funcionalidad son propiedad del dueño del sitio y están protegidos por leyes internacionales de derechos de autor, marcas registradas, patentes, secretos comerciales y otras leyes de propiedad intelectual o derechos de propiedad.",
+        "license": "Se te otorga una licencia limitada solo para fines de visualización del material contenido en este sitio web."
+      },
+      "restrictions": {
+        "title": "3. Restricciones",
+        "content": "Estás específicamente restringido de todo lo siguiente:",
+        "items": [
+          "Publicar cualquier material del sitio web en cualquier otro medio sin consentimiento previo.",
+          "Vender, sublicenciar y/o comercializar de otra manera cualquier material del sitio web.",
+          "Usar este sitio web de cualquier manera que sea o pueda ser perjudicial para este sitio web.",
+          "Usar este sitio web de cualquier manera que afecte el acceso de los usuarios a este sitio web.",
+          "Participar en cualquier extracción de datos, recolección de datos, extracción de datos o cualquier otra actividad similar en relación con este sitio web."
+        ]
+      },
+      "disclaimer": {
+        "title": "4. Descargo de Responsabilidad",
+        "content": "Los materiales en este sitio web se proporcionan \"tal cual\". No ofrezco garantías, expresas o implícitas, y por la presente renuncio y niego todas las otras garantías. Además, no garantizo ni hago ninguna representación con respecto a la exactitud, los resultados probables o la confiabilidad del uso de los materiales en su sitio web o de otra manera relacionados con dichos materiales o en cualquier sitio vinculado a este sitio."
+      },
+      "liability": {
+        "title": "5. Limitación de Responsabilidad",
+        "content": "En ningún caso yo o mis proveedores seremos responsables de ningún daño (incluyendo, sin limitación, daños por pérdida de datos o ganancias, o debido a la interrupción del negocio) que surjan del uso o la imposibilidad de usar los materiales en este sitio web."
+      },
+      "governing": {
+        "title": "6. Ley Aplicable",
+        "content": "Cualquier reclamo relacionado con este sitio web se regirá por las leyes de la República Dominicana sin tener en cuenta sus disposiciones sobre conflictos de leyes."
+      }
+    }
+  },
+  "experience": [
+    {
+      "description": "Especializado en seguridad web, mantenimiento, SEO y gestión de sitios en servidores Azure. Enfocado en la optimización del rendimiento y la usabilidad."
+    },
+    {
+      "description": "Colaborando en el mantenimiento y evolución de la plataforma digital principal."
+    },
+    {
+      "description": "Lideré el desarrollo y mantenimiento de sitios web corporativos utilizando WordPress, enfocándome en temas personalizados y rendimiento."
+    },
+    {
+      "description": "Especializado en desarrollo backend desde cero para proyectos de gran escala y alto tráfico, y administración de servidores."
+    }
+  ],
+  "education": [
+    {
+      "description": "Graduado con una base sólida en programación, algoritmos y sistemas de información."
+    }
+  ],
+  "common": {
+    "viewProject": "Ver Proyecto",
+    "getStarted": "Comenzar",
+    "whatsIncluded": "Qué incluye",
+    "viewWork": "Ver Trabajos",
+    "contactMe": "Contáctame",
+    "downloadCV": "Descargar CV",
+    "getInTouch": "Ponerse en Contacto",
+    "whatsappChat": "Chatea en WhatsApp",
+    "whatsappMessage": "¡Hola Alexis! Vi tu portafolio y me gustaría conversar."
+  },
+  "workPage": {
+    "title": "Trabajos Seleccionados",
+    "description": "Una muestra de productos digitales diseñados para rendimiento, escalabilidad y experiencia de usuario.",
+    "filters": {
+      "all": "Todos",
+      "fullstack": "Full Stack",
+      "frontend": "Frontend"
+    },
+    "cta": {
+      "title": "¿Tienes una visión?",
+      "highlight": "Vamos a construirla.",
+      "description": "Desde la arquitectura técnica hasta la implementación perfecta, ayudo a empresas a construir software que importa.",
+      "button": "Iniciar un Proyecto"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Servicios Profesionales",
+      "description": "Soluciones expertas adaptadas a tus necesidades comerciales. Desde el desarrollo rápido de MVP hasta arquitectura de grado empresarial."
+    },
+    "methodology": {
+      "title": "Cómo Trabajo",
+      "description": "Mi enfoque de ingeniería se basa en tres pilares: rendimiento, seguridad y escalabilidad.",
+      "pillars": {
+        "cleanArch": {
+          "title": "Arquitectura Limpia",
+          "description": "Escribir código mantenible y documentado que escala con las necesidades de tu negocio y reduce la deuda técnica."
+        },
+        "performance": {
+          "title": "Rendimiento Primero",
+          "description": "Optimización para Core Web Vitals y experiencia de usuario. Tiempos de carga rápidos igualan mejores tasas de conversión."
+        },
+        "security": {
+          "title": "Seguridad por Diseño",
+          "description": "Implementación de protocolos de seguridad estándar desde el primer día para proteger tus datos y usuarios."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para transformar tu visión?",
+      "description": "Hablemos sobre los requisitos de tu proyecto y construyamos una estrategia que funcione para tus necesidades específicas.",
+      "button": "Iniciar Proyecto"
+    }
+  },
+  "contactPage": {
+    "title": "Trabajemos Juntos",
+    "description": "¿Tienes un proyecto en mente o solo quieres saludar? Siempre estoy abierto a discutir nuevas ideas y oportunidades.",
+    "emailMe": "Envíame un Email",
+    "whatsappMe": "WhatsApp",
+    "socialConnect": "O conecta conmigo en redes sociales"
+  },
+  "projects": [
+    {
+      "description": "Desarrollo y mantenimiento fullstack continuo para una plataforma global de capacitación en liderazgo. Responsable de estrategias SEO, optimización de rendimiento e implementación de nuevas funciones para un sitio que sirve a más de 150k profesionales en todo el mundo."
+    },
+    {
+      "description": "Lideré el desarrollo integral de un sitio web gubernamental para Puerto Rico. Entregué una solución receptiva, accesible e integrada con CMS alineada con los estándares del sector público."
+    },
+    {
+      "description": "Proyecto gubernamental enfocado en seguridad vial. Incluye CMS, informes de incidentes, mapas interactivos y herramientas de retroalimentación comunitaria."
+    },
+    {
+      "description": "Migración del sitio web corporativo de WordPress a Webflow, reconstruyendo el frontend e integrando funcionalidades de API personalizadas para un mejor rendimiento."
+    },
+    {
+      "description": "Desarrollo de una aplicación de gestión de tareas drag-and-drop con actualizaciones en tiempo real, colaboración en equipo y funciones de autenticación."
+    },
+    {
+      "description": "Sistema de blog dinámico con optimización SEO, gestión de autores y banners de llamada a la acción personalizados para atraer nuevos usuarios."
+    },
+    {
+      "description": "Sitio web oficial para el Gobierno de Puerto Rico. Plataforma receptiva y accesible alineada con los estándares de comunicación de salud pública."
+    },
+    {
+      "description": "Sitio web oficial para el Centro de Sonografía PRE-VUE. Una plataforma moderna y receptiva que muestra servicios de imágenes prenatales, integración de tecnología IA y ofertas de bienestar holístico."
+    }
+  ],
+  "services": [
+    {
+      "title": "Desarrollo Web",
+      "description": "Sitios web personalizados construidos con React, Next.js o WordPress. Rápidos, seguros y optimizados para SEO.",
+      "features": ["Desarrollo Personalizado", "Integración CMS", "Optimización de Rendimiento", "Mejores Prácticas SEO"]
+    },
+    {
+      "title": "Desarrollo Webflow",
+      "description": "Sitios Webflow de alta gama con animaciones e interacciones avanzadas. Perfecto para sitios de marketing.",
+      "features": ["Desarrollo Visual", "Animaciones Complejas", "Configuración CMS", "Diseño Pixel-Perfect"]
+    },
+    {
+      "title": "Optimización de Rendimiento",
+      "description": "Acelera tu sitio web existente. Mejora Core Web Vitals, retención de usuarios y rankings en Google.",
+      "features": ["Reducción de Tiempo de Carga", "Optimización de Imágenes", "Minificación de Código", "Estrategias de Caché"]
+    },
+    {
+      "title": "Seguridad Cloud y Web",
+      "description": "Gestión segura de servidores (Azure/AWS), estrategias de despliegue e implementación de protocolos de seguridad estrictos.",
+      "features": ["Gestión Azure/AWS", "Auditorías de Seguridad", "Endurecimiento de Servidores", "Pipelines de Despliegue"]
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "hero": {
+    "title": {
+      "prefix": "Building digital",
+      "highlight": "products, brands, and experiences"
+    },
+    "roles": ["Tech Lead", "Frontend Developer", "Web Security Enthusiast", "Cloud Architect"],
+    "description": "Frontend Developer with over 8 years of experience delivering high-impact web solutions. Specialized in WordPress, Webflow, and React, with a strong focus on building scalable, maintainable architectures and crafting exceptional user experiences.",
+    "buttons": {
+      "primary": "View Work",
+      "secondary": "Contact Me",
+      "downloadCv": "Download CV"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Passionate developer with 8+ years of experience building modern web applications. I love turning complex problems into simple, beautiful solutions.",
+    "experience": "Experience",
+    "education": "Education",
+    "softSkills": "Soft Skills"
+  },
+  "stats": [
+    { "label": "Years Experience" },
+    { "label": "Projects Delivered" },
+    { "label": "Client Satisfaction" },
+    { "label": "Faster Load Times" }
+  ],
+  "featuredProjects": {
+    "badge": "Selected Work",
+    "titlePrefix": "Featured",
+    "titleHighlight": "Projects",
+    "description": "A selection of my most recent and significant work, showcasing my expertise in building scalable web applications.",
+    "viewAll": "View All Projects"
+  },
+  "cta": {
+    "badge": "Available for new opportunities",
+    "titlePrefix": "Ready to launch your",
+    "titleHighlight": "next big idea?",
+    "description": "Let's collaborate to build a digital experience that not only looks amazing but also drives real results for your business.",
+    "primaryButton": "Start a Project",
+    "secondaryButton": "View Portfolio"
+  },
+  "footer": {
+    "description": "Full Stack Developer crafting beautiful digital experiences with modern technologies.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "builtWith": "Built with Next.js & Tailwind CSS.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "description": "A comprehensive toolkit for building modern, scalable applications",
+    "categories": {
+      "frontend": "Frontend",
+      "cms": "CMS & Platforms",
+      "performance": "Performance",
+      "tools": "Tools & DevOps",
+      "design": "Design",
+      "security": "Security"
+    }
+  },
+  "certificationsPage": {
+    "titlePrefix": "Certifications &",
+    "titleHighlight": "Education",
+    "description": "Continuous learning and professional development achievements",
+    "issued": "Issued:",
+    "id": "ID:"
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "description": "How I handle your data and privacy.",
+    "lastUpdated": "Last Updated:",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "content": "Welcome to my portfolio. I respect your privacy and am committed to protecting your personal data. This privacy policy will inform you as to how I look after your personal data when you visit my website and tell you about your privacy rights and how the law protects you."
+      },
+      "information": {
+        "title": "2. Information I Collect",
+        "content": "Currently, this portfolio website is primarily informational. I may collect data in the following ways:",
+        "items": [
+          "Contact Information: If you use the contact form or email me directly, I will collect your name, email address, and the content of your message to respond to your inquiry.",
+          "Usage Data: I may use standard web analytics tools to understand how visitors interact with the site. This data is anonymized and helps me improve the user experience."
+        ]
+      },
+      "usage": {
+        "title": "3. How I Use Your Information",
+        "content": "I only use your personal data when the law allows me to. Most commonly, I will use your personal data in the following circumstances:",
+        "items": [
+          "To communicate with you in response to your inquiries.",
+          "To improve the website functionality and content."
+        ]
+      },
+      "security": {
+        "title": "4. Data Security",
+        "content": "I have put in place appropriate security measures to prevent your personal data from being accidentally lost, used, or accessed in an unauthorized way, altered, or disclosed."
+      },
+      "links": {
+        "title": "5. Third-Party Links",
+        "content": "This website may include links to third-party websites (like GitHub, LinkedIn, etc.), plug-ins, and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. I do not control these third-party websites and am not responsible for their privacy statements."
+      },
+      "contact": {
+        "title": "6. Contact Me",
+        "content": "If you have any questions about this privacy policy or my privacy practices, please contact me at:"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "description": "Rules and regulations for using this website.",
+    "lastUpdated": "Last Updated:",
+    "sections": {
+      "agreement": {
+        "title": "1. Agreement to Terms",
+        "content": "By accessing this website, you agree to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site."
+      },
+      "ip": {
+        "title": "2. Intellectual Property Rights",
+        "content": "All content, features, and functionality are owned by the site owner and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.",
+        "license": "You are granted a limited license only for purposes of viewing the material contained on this website."
+      },
+      "restrictions": {
+        "title": "3. Restrictions",
+        "content": "You are specifically restricted from all of the following:",
+        "items": [
+          "Publishing any website material in any other media without prior consent.",
+          "Selling, sublicensing, and/or otherwise commercializing any website material.",
+          "Using this website in any way that is or may be damaging to this website.",
+          "Using this website in any way that impacts user access to this website.",
+          "Engaging in any data mining, data harvesting, data extracting, or any other similar activity in relation to this website."
+        ]
+      },
+      "disclaimer": {
+        "title": "4. Disclaimer",
+        "content": "The materials on this website are provided \"as is\". I make no warranties, expressed or implied, and hereby disclaim and negate all other warranties. Furthermore, I do not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site."
+      },
+      "liability": {
+        "title": "5. Limitation of Liability",
+        "content": "In no event shall I or my suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website."
+      },
+      "governing": {
+        "title": "6. Governing Law",
+        "content": "Any claim related to this website shall be governed by the laws of the Dominican Republic without regard to its conflict of law provisions."
+      }
+    }
+  },
+  "experience": [
+    {
+      "description": "Specializing in web security, maintenance, SEO, and site management on Azure servers. Focused on performance optimization and usability."
+    },
+    {
+      "description": "Collaborating on the maintenance and evolution of the main digital platform."
+    },
+    {
+      "description": "Led the development and maintenance of corporate websites using WordPress, focusing on custom themes and performance."
+    },
+    {
+      "description": "Specializing in backend development from scratch for high-traffic, large-scale projects and server administration."
+    }
+  ],
+  "education": [
+    {
+      "description": "Graduated with a strong foundation in programming, algorithms, and information systems."
+    }
+  ],
+  "common": {
+    "viewProject": "View Project",
+    "getStarted": "Get Started",
+    "whatsIncluded": "What's included",
+    "viewWork": "View Work",
+    "contactMe": "Contact Me",
+    "downloadCV": "Download CV",
+    "getInTouch": "Get In Touch",
+    "whatsappChat": "Chat on WhatsApp",
+    "whatsappMessage": "Hi Alexis! I saw your portfolio and would like to chat."
+  },
+  "workPage": {
+    "title": "Selected Work",
+    "description": "A showcase of digital products engineered for performance, scalability, and user experience.",
+    "filters": {
+      "all": "All Work",
+      "fullstack": "Full Stack",
+      "frontend": "Frontend"
+    },
+    "cta": {
+      "title": "Have a vision?",
+      "highlight": "Let's engineer it.",
+      "description": "From technical architecture to pixel-perfect implementation, I help companies build software that matters.",
+      "button": "Start a Project"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Professional Services",
+      "description": "Expert solutions tailored to your business needs. From rapid MVP development to enterprise-grade architecture, I deliver scalable and secure digital products."
+    },
+    "methodology": {
+      "title": "How I Work",
+      "description": "My engineering approach is built on three pillars: performance, security, and scalability.",
+      "pillars": {
+        "cleanArch": {
+          "title": "Clean Architecture",
+          "description": "Writing maintainable, self-documenting code that scales with your business needs and reduces technical debt."
+        },
+        "performance": {
+          "title": "Performance First",
+          "description": "Optimizing for Core Web Vitals and user experience. Fast load times equal better conversion rates."
+        },
+        "security": {
+          "title": "Security by Design",
+          "description": "Implementing industry-standard security protocols from day one to protect your data and users."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to transform your vision?",
+      "description": "Let's discuss your project requirements and build a strategy that works for your specific needs. No commitment required.",
+      "button": "Start Project"
+    }
+  },
+  "contactPage": {
+    "title": "Let's Work Together",
+    "description": "Have a project in mind or just want to say hi? I'm always open to discussing new ideas and opportunities.",
+    "emailMe": "Email Me",
+    "whatsappMe": "WhatsApp Me",
+    "socialConnect": "Or connect with me on social media"
+  },
+  "projects": [
+    {
+      "description": "Ongoing fullstack development and maintenance for a global leadership training platform. Responsible for SEO strategies, performance optimization, and implementing new features for a site serving over 150k professionals worldwide."
+    },
+    {
+      "description": "Led end-to-end development of a government website for Puerto Rico. Delivered a responsive, accessible, and CMS-integrated solution aligned with public sector standards."
+    },
+    {
+      "description": "Government project focused on traffic safety. Includes CMS, incident reports, interactive maps, and community feedback tools."
+    },
+    {
+      "description": "Migrated corporate website from WordPress to Webflow, rebuilding the frontend and integrating custom API functionalities for better performance."
+    },
+    {
+      "description": "Developed a drag-and-drop task management app with real-time updates, team collaboration, and authentication features."
+    },
+    {
+      "description": "Dynamic blog system with SEO optimization, author management, and custom call-to-action banners to attract new users."
+    },
+    {
+      "description": "Official website for the Government of Puerto Rico. Responsive, accessible platform aligned with public health communication standards."
+    },
+    {
+      "description": "Official website for PRE-VUE Sonography Center. A modern, responsive platform showcasing prenatal imaging services, AI technology integration, and holistic wellness offerings."
+    }
+  ],
+  "services": [
+    {
+      "title": "Web Development",
+      "description": "Custom websites built with React, Next.js, or WordPress. Fast, secure, and SEO-optimized.",
+      "features": ["Custom Development", "CMS Integration", "Performance Optimization", "SEO Best Practices"]
+    },
+    {
+      "title": "Webflow Development",
+      "description": "High-end Webflow sites with advanced animations and interactions. Perfect for marketing sites.",
+      "features": ["Visual Development", "Complex Animations", "CMS Setup", "Pixel-Perfect Design"]
+    },
+    {
+      "title": "Performance Optimization",
+      "description": "Speed up your existing website. Improve Core Web Vitals, user retention, and Google rankings.",
+      "features": ["Load Time Reduction", "Image Optimization", "Code Minification", "Caching Strategies"]
+    },
+    {
+      "title": "Cloud & Web Security",
+      "description": "Secure server management (Azure/AWS), deployment strategies, and implementation of strict security protocols for digital assets.",
+      "features": ["Azure/AWS Management", "Security Audits", "Server Hardening", "Deployment Pipelines"]
+    }
+  ]
+}

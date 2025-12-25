@@ -1,0 +1,8 @@
+# Minimal .htaccess for testing
+# No redirects active
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# SEO Redirects
+Redirect 301 /contact-us /contact/
+Redirect 301 /contact-us/ /contact/
