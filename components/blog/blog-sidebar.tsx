@@ -12,6 +12,7 @@ interface BlogSidebarProps {
   selectedTag?: string | null
   onTagSelect?: (tag: string | null) => void
   className?: string
+  headings?: { text: string; slug: string; level: number }[]
 }
 
 const tagColors = [
@@ -48,6 +49,7 @@ export function BlogSidebar({
   selectedTag,
   onTagSelect,
   className = "",
+  headings,
 }: BlogSidebarProps) {
   return (
     <aside className={`space-y-8 ${className}`}>
@@ -69,6 +71,30 @@ export function BlogSidebar({
               onChange={(e) => onSearchChange?.(e.target.value)}
             />
           </div>
+        </motion.div>
+      )}
+
+      {headings && headings.length > 0 && (
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="bg-card text-card-foreground rounded-xl border shadow-sm p-6"
+        >
+          <h3 className="font-semibold text-lg mb-4">Table of Contents</h3>
+          <nav className="flex flex-col gap-2">
+            {headings.map((heading) => (
+              <a
+                key={heading.slug}
+                href={`#${heading.slug}`}
+                className={`text-sm text-muted-foreground hover:text-primary transition-colors block ${
+                  heading.level === 3 ? "pl-4" : ""
+                }`}
+              >
+                {heading.text}
+              </a>
+            ))}
+          </nav>
         </motion.div>
       )}
 

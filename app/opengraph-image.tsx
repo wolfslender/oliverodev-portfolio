@@ -1,6 +1,8 @@
 import { ImageResponse } from 'next/og'
  
-export const runtime = 'edge'
+export const dynamic = 'force-static'
+
+
  
 export const alt = 'Alexis Olivero - Frontend Developer & Web Specialist'
 export const size = {

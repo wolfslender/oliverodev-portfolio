@@ -7,6 +7,7 @@ const postsQuery = groq`
   *[_type == "post"] | order(publishedAt desc) {
     _id,
     title,
+    title_es,
     slug,
     publishedAt,
     "authorName": author->name,

@@ -6,19 +6,26 @@ import { client, urlFor } from "@/lib/sanity/client"
 import { groq } from "next-sanity"
 import { PortableText } from "@portabletext/react"
 import Image from "next/image"
-import { formatDate } from "@/lib/utils"
+import { formatDate, slugify } from "@/lib/utils"
 import { BlogSidebar } from "@/components/blog/blog-sidebar"
+import { siteConfig } from "@/lib/config"
+import { BlogPostContent } from "@/components/blog/blog-post-content"
+
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
     _id,
     title,
+    title_es,
+    description,
+    description_es,
     publishedAt,
     mainImage,
     "authorName": author->name,
     "authorImage": author->image,
     "categories": categories[]->title,
-    body
+    body,
+    body_es
   }
 `
 
@@ -57,7 +64,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
       title: `${post.title} - OliveroDev`,
+      description: post.description || siteConfig.description,
       openGraph: {
+        title: post.title,
+        description: post.description || siteConfig.description,
+        type: "article",
+        publishedTime: post.publishedAt,
+        authors: [post.authorName],
         images: post.mainImage ? [urlFor(post.mainImage).width(1200).height(630).url()] : [],
       },
     }
@@ -110,61 +123,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const tags = categories.map((cat: any) => cat.title)
 
   return (
-    <div className="container py-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <Link href="/blog" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
-        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
-      </Link>
-
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-        <article className="lg:col-span-3">
-          <div className="mb-8">
-            <div className="flex gap-2 mb-4">
-              {post.categories?.map((category: string) => (
-                <span key={category} className="text-xs font-medium bg-secondary px-2.5 py-0.5 rounded-full text-secondary-foreground">
-                  {category}
-                </span>
-              ))}
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">{post.title}</h1>
-
-            <div className="flex items-center gap-4 text-muted-foreground mb-8">
-                <div className="flex items-center gap-2">
-                    {post.authorImage && (
-                        <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                             <Image src={urlFor(post.authorImage).url()} alt={post.authorName} fill className="object-cover" />
-                        </div>
-                    )}
-                    <span>{post.authorName}</span>
-                </div>
-                <span>•</span>
-                <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-            </div>
-
-            {post.mainImage && (
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-10 border">
-                <Image
-                  src={urlFor(post.mainImage).url()}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            )}
-          </div>
-
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <PortableText value={post.body} />
-          </div>
-        </article>
-
-        <div className="lg:col-span-1">
-          <div className="sticky top-24">
-            <BlogSidebar tags={tags} showSearch={false} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <BlogPostContent post={post} tags={tags} />
   )
 }
+

@@ -9,6 +9,14 @@ export default {
       type: 'string',
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 3,
+      description: 'Short description for SEO and previews (150-160 characters recommended)',
+      validation: (Rule: any) => Rule.max(200),
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -44,7 +52,36 @@ export default {
     },
     {
       name: 'body',
-      title: 'Body',
+      title: 'Body (English)',
+      type: 'array',
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'H1', value: 'h1' },
+            { title: 'H2', value: 'h2' },
+            { title: 'H3', value: 'h3' },
+            { title: 'Quote', value: 'blockquote' },
+          ],
+          lists: [{ title: 'Bullet', value: 'bullet' }],
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
+          },
+        },
+        {
+          type: 'image',
+          options: { hotspot: true },
+        },
+      ],
+    },
+    {
+      name: 'body_es',
+      title: 'Body (Spanish)',
       type: 'array',
       of: [
         {

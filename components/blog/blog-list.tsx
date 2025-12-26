@@ -8,10 +8,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BlogSidebar } from "./blog-sidebar"
 import { urlFor } from "@/lib/sanity/client"
 import { motion, AnimatePresence } from "framer-motion"
+import { useTranslation } from "react-i18next"
 
 interface Post {
   _id: string
   title: string
+  title_es?: string
   slug: { current: string }
   publishedAt: string
   authorName: string
@@ -25,11 +27,14 @@ interface BlogListProps {
 }
 
 export function BlogList({ posts, tags }: BlogListProps) {
+  const { i18n } = useTranslation()
+  const isSpanish = i18n.language.startsWith("es")
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
 
   const filteredPosts = posts.filter((post) => {
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase())
+    const title = isSpanish && post.title_es ? post.title_es : post.title
+    const matchesSearch = title.toLowerCase().includes(searchQuery.toLowerCase())
     const matchesTag = selectedTag ? post.categories?.includes(selectedTag) : true
     return matchesSearch && matchesTag
   })
@@ -40,7 +45,9 @@ export function BlogList({ posts, tags }: BlogListProps) {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filteredPosts.length > 0 ? (
-              filteredPosts.map((post, index) => (
+              filteredPosts.map((post, index) => {
+                 const title = isSpanish && post.title_es ? post.title_es : post.title
+                 return (
                 <motion.div
                   key={post._id}
                   layout
@@ -55,7 +62,7 @@ export function BlogList({ posts, tags }: BlogListProps) {
                         <div className="relative h-48 w-full overflow-hidden">
                           <Image
                             src={urlFor(post.mainImage).url()}
-                            alt={post.title}
+                            alt={title}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-110"
                           />
@@ -73,17 +80,17 @@ export function BlogList({ posts, tags }: BlogListProps) {
                             </span>
                           )}
                         </div>
-                        <CardTitle className="line-clamp-2 text-lg group-hover:text-primary transition-colors">{post.title}</CardTitle>
+                        <CardTitle className="line-clamp-2 text-lg group-hover:text-primary transition-colors">{title}</CardTitle>
                       </CardHeader>
                       <CardContent className="mt-auto">
                         <p className="text-sm text-muted-foreground">
-                          By {post.authorName}
+                          {isSpanish ? "Por" : "By"} {post.authorName}
                         </p>
                       </CardContent>
                     </Card>
                   </Link>
                 </motion.div>
-              ))
+              )})
             ) : (
               <motion.div 
                 initial={{ opacity: 0 }} 
