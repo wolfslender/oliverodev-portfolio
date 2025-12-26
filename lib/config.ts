@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Frontend Developer with over 6 years of experience delivering high-impact web solutions. Specialized in WordPress, Webflow, and React, with a strong focus on building scalable, maintainable architectures.",
   url: "https://oliverodev.com",
-  ogImage: "https://oliverodev.com/ai-content-generator-interface.png",
+  ogImage: "https://oliverodev.com/opengraph-image",
   links: {
     instagram: "https://www.instagram.com/alexisfit97/",
     github: "https://github.com/wolfslender",
