@@ -1,21 +1,35 @@
 <IfModule mod_rewrite.c>
-  Options -MultiViews
+  # 1. Configuration options
+  Options -MultiViews -Indexes
+  
+  # CRITICAL: Prevent Apache from automatically adding a trailing slash to directories
+  # This allows us to intercept the request and serve the .html file instead of the directory
+  DirectorySlash Off
+  
   RewriteEngine On
   RewriteBase /
 
-  # 1. Custom 404
+  # 2. Custom 404
   ErrorDocument 404 /404.html
 
-  # 2. Remove trailing slash from requests
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)/$ /$1 [L,R=301]
+  # 3. Enforce no trailing slash (Canonical URL)
+  # If request ends in slash, remove it (unless it's the root)
+  RewriteCond %{REQUEST_URI} ^/(.+)/$
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
 
-  # 3. Canonical redirect: remove .html extension from URL
+  # 4. Remove .html extension (Canonical URL)
   RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
   RewriteRule ^ /%1 [R=301,L,NE]
 
-  # 4. Serve .html file if it exists, even if a directory with same name exists
-  # This fixes the conflict between Next.js build artifacts directories and HTML files
+  # 5. Serve .html file if it exists
+  # This matches /blog/slug and serves /blog/slug.html
+  # It takes precedence over any directory with the same name because we disabled DirectorySlash
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(.*)$ $1.html [L]
+  
+  # 6. Fallback for directories that DO need to be accessed (like root)
+  # If it's a directory and has index.html, let standard Apache behavior work (or rewrite explicitly)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
 </IfModule>
