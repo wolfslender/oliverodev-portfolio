@@ -1,8 +1,6 @@
 import { client } from "@/lib/sanity/client"
 import { groq } from "next-sanity"
-import Link from "next/link"
-import { formatDate } from "@/lib/utils"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BlogList } from "@/components/blog/blog-list"
 
 // Query to get posts
 const postsQuery = groq`
@@ -14,6 +12,13 @@ const postsQuery = groq`
     "authorName": author->name,
     "categories": categories[]->title,
     mainImage
+  }
+`
+
+// Query to get all categories (tags)
+const categoriesQuery = groq`
+  *[_type == "category"] | order(title asc) {
+    title
   }
 `
 
@@ -33,7 +38,12 @@ export default async function BlogPage() {
     )
   }
 
-  const posts = await client.fetch(postsQuery)
+  const [posts, categories] = await Promise.all([
+    client.fetch(postsQuery),
+    client.fetch(categoriesQuery)
+  ])
+
+  const tags = categories.map((cat: any) => cat.title)
 
   return (
     <div className="container py-24">
@@ -44,38 +54,7 @@ export default async function BlogPage() {
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {posts.length > 0 ? (
-          posts.map((post: any) => (
-            <Link key={post._id} href={`/blog/${post.slug.current}`}>
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm text-muted-foreground">
-                      {formatDate(post.publishedAt)}
-                    </span>
-                    {post.categories && (
-                      <span className="text-xs bg-secondary px-2 py-1 rounded-full">
-                        {post.categories[0]}
-                      </span>
-                    )}
-                  </div>
-                  <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    By {post.authorName}
-                  </p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))
-        ) : (
-          <div className="col-span-full text-center py-12 text-muted-foreground">
-            No posts found yet. Check back soon!
-          </div>
-        )}
-      </div>
+      <BlogList posts={posts} tags={tags} />
     </div>
   )
 }
