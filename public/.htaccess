@@ -1,5 +1,8 @@
 
 <IfModule mod_rewrite.c>
+  # Disable MultiViews to prevent "Multiple Choices" errors
+  Options -MultiViews
+
   RewriteEngine On
   RewriteBase /
 
