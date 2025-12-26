@@ -14,7 +14,7 @@ const nextConfig = {
     ],
   },
   output: 'export',
-  trailingSlash: false,
+  trailingSlash: true,
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
