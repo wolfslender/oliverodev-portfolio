@@ -9,7 +9,7 @@ export const client = createClient({
   projectId: projectId || 'placeholder', // Use a placeholder to prevent build failure
   dataset,
   apiVersion,
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  useCdn: false, // Set to false if statically generating pages, using ISR or tag-based revalidation
 })
 
 const builder = createImageUrlBuilder(client)

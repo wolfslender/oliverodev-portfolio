@@ -39,12 +39,13 @@ export async function generateStaticParams() {
   return [{ slug: 'welcome' }]
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  if (params.slug === 'welcome') return { title: 'Welcome to Blog' }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  if (slug === 'welcome') return { title: 'Welcome to Blog' }
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return { title: 'Blog Post' }
 
   try {
-    const post = await client.fetch(postQuery, { slug: params.slug })
+    const post = await client.fetch(postQuery, { slug })
     if (!post) return { title: 'Not Found' }
 
     return {
@@ -58,8 +59,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const { slug } = params
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
 
   if (slug === 'welcome') {
     return (
