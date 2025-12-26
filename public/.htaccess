@@ -3,19 +3,19 @@
   RewriteEngine On
   RewriteBase /
 
-  # 1. If request is a directory, let it pass (for assets/images)
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteRule ^ - [L]
+  # 1. Custom 404
+  ErrorDocument 404 /404.html
 
-  # 2. If request has .html extension, redirect to remove it (canonical URL)
+  # 2. Remove trailing slash from requests
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+  # 3. Canonical redirect: remove .html extension from URL
   RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
   RewriteRule ^ /%1 [R=301,L,NE]
 
-  # 3. If request doesn't have extension and file.html exists, rewrite internally
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}.html -f
+  # 4. Serve .html file if it exists, even if a directory with same name exists
+  # This fixes the conflict between Next.js build artifacts directories and HTML files
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(.*)$ $1.html [L]
-  
-  # Custom 404
-  ErrorDocument 404 /404.html
 </IfModule>
