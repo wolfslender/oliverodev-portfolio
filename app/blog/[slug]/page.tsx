@@ -24,34 +24,18 @@ const postQuery = groq`
 export const dynamicParams = false
 
 export async function generateStaticParams() {
-  console.log("--------------------------------------------------")
-  console.log("Build Debug: Starting generateStaticParams")
-  console.log("Sanity Project ID exists:", !!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID)
-  console.log("Sanity Dataset exists:", !!process.env.NEXT_PUBLIC_SANITY_DATASET)
-
   try {
     if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
        const query = groq`*[_type == "post"]{ "slug": slug.current }`
-       console.log("Build Debug: Fetching slugs with query:", query)
-       
        const slugs = await client.fetch(query)
-       console.log("Build Debug: Raw response from Sanity:", JSON.stringify(slugs))
-
        if (slugs && Array.isArray(slugs) && slugs.length > 0) {
-         const params = slugs.map((slug: any) => ({ slug: slug.slug }))
-         console.log("Build Debug: Generated params:", JSON.stringify(params))
-         return params
-       } else {
-         console.log("Build Debug: No slugs found or empty array")
+         return slugs.map((slug: any) => ({ slug: slug.slug }))
        }
-    } else {
-        console.log("Build Debug: Missing Project ID")
     }
   } catch (error) {
-    console.error("Build Debug: Error fetching Sanity slugs:", error)
+    console.warn("Error fetching Sanity slugs:", error)
   }
   
-  console.log("Build Debug: Returning fallback 'welcome' slug")
   return [{ slug: 'welcome' }]
 }
 
@@ -75,7 +59,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function BlogPost({ params }: { params: { slug: string } }) {
-  if (params.slug === 'welcome') {
+  const { slug } = params
+
+  if (slug === 'welcome') {
     return (
       <div className="container py-24 text-center">
         <Link href="/blog" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
@@ -93,7 +79,12 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   let post = null
   try {
-    post = await client.fetch(postQuery, { slug: params.slug })
+    // Ensure slug is a string
+    const safeSlug = typeof slug === 'string' ? slug : Array.isArray(slug) ? slug[0] : ''
+    
+    if (safeSlug) {
+      post = await client.fetch(postQuery, { slug: safeSlug })
+    }
   } catch (error) {
     console.error("Error fetching post:", error)
   }
