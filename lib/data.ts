@@ -214,6 +214,17 @@ export const certifications = [
 
 export const projects = [
   {
+    title: "Keitel De Luna - Cybersecurity Analyst | IT Portfolio",
+    description: "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments.",
+    image: "/projects/keitel-portfolio.jpg",
+    tags: ["Cybersecurity", "IT Support", "Vulnerability Management"],
+    category: "fullstack",
+    github: "#",
+    demo: "https://keiteldeluna.com/",
+    featured: true,
+    size: "large",
+  },
+  {
     title: "Co-Active Training Institute",
     description: "Ongoing fullstack development and maintenance for a global leadership training platform. Responsible for SEO strategies, performance optimization, and implementing new features for a site serving over 150k professionals worldwide.",
     image: "/projects/coactive.jpg",
