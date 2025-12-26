@@ -110,12 +110,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const tags = categories.map((cat: any) => cat.title)
 
   return (
-    <div className="container py-24">
+    <div className="container py-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <Link href="/blog" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
         <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
       </Link>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
         <article className="lg:col-span-3">
           <div className="mb-8">
             <div className="flex gap-2 mb-4">
