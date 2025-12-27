@@ -227,7 +227,7 @@ export const projects = [
   {
     title: "Keitel De Luna - Cybersecurity Analyst | IT Portfolio",
     description: "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments.",
-    image: "/projects/keitel-portfolio.jpg",
+    image: "/projects/Keitel-De-Luna.png",
     tags: ["Cybersecurity", "IT Support", "Vulnerability Management"],
     category: "fullstack",
     github: "#",
