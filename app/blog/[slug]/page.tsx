@@ -72,7 +72,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         type: "article",
         publishedTime: post.publishedAt,
         authors: [post.authorName],
-        images: post.mainImage ? [urlFor(post.mainImage).width(1200).height(630).url()] : [],
+        ...(post.mainImage && {
+          images: [urlFor(post.mainImage).width(1200).height(630).url()],
+        }),
       },
     }
   } catch (error) {

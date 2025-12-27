@@ -126,7 +126,7 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
             )}
 
             <div className="flex items-center justify-between py-6 border-y mb-8">
-               <span className="text-sm font-medium text-muted-foreground">{isSpanish ? "Compartir:" : "Share:"}</span>
+               <span className="text-2xl font-bold text-foreground mr-4">{isSpanish ? "Compartir:" : "Share:"}</span>
                <SocialShareButtons 
                  url={`${siteConfig.url}/blog/${post.slug.current}`} 
                  title={title} 
@@ -139,7 +139,7 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
           </div>
 
           <div className="mt-12 pt-8 border-t">
-            <h3 className="text-lg font-semibold mb-4">{isSpanish ? "Comparte este artículo" : "Share this article"}</h3>
+            <h3 className="text-2xl font-bold mb-6">{isSpanish ? "Comparte este artículo" : "Share this article"}</h3>
             <SocialShareButtons 
                  url={`${siteConfig.url}/blog/${post.slug.current}`} 
                  title={title} 
