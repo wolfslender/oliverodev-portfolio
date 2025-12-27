@@ -214,6 +214,17 @@ export const certifications = [
 
 export const projects = [
   {
+    title: "Acuastock",
+    description: "Specialized e-commerce for ornamental fish, aquariums, and accessories. Features product catalog, import services, and comprehensive aquatic supplies.",
+    image: "/projects/acuastock.jpg",
+    tags: ["WordPress", "WooCommerce", "E-commerce"],
+    category: "fullstack",
+    github: "#",
+    demo: "https://acuastock.com/",
+    featured: true,
+    size: "large",
+  },
+  {
     title: "Keitel De Luna - Cybersecurity Analyst | IT Portfolio",
     description: "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments.",
     image: "/projects/keitel-portfolio.jpg",
