@@ -5,11 +5,15 @@ import { PortableText } from "@portabletext/react"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 import { urlFor } from "@/lib/sanity/client"
 import { formatDate, slugify } from "@/lib/utils"
 import { BlogSidebar } from "@/components/blog/blog-sidebar"
 import { siteConfig } from "@/lib/config"
 import { SocialShareButtons } from "@/components/blog/social-share-buttons"
+import { TableOfContents } from "@/components/blog/table-of-contents"
+import { AuthorBio } from "@/components/blog/author-bio"
 
 interface BlogPostContentProps {
   post: any
@@ -18,7 +22,15 @@ interface BlogPostContentProps {
 
 export function BlogPostContent({ post, tags }: BlogPostContentProps) {
   const { i18n } = useTranslation()
+  const router = useRouter()
+  const [searchQuery, setSearchQuery] = useState("")
   const isSpanish = i18n.language.startsWith("es")
+
+  const handleSearchSubmit = (query: string) => {
+    if (query.trim()) {
+      router.push(`/blog?search=${encodeURIComponent(query)}`)
+    }
+  }
 
   // Determine content based on language
   const title = isSpanish && post.title_es ? post.title_es : post.title
@@ -125,6 +137,8 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
               </div>
             )}
 
+            <TableOfContents headings={headings} />
+
             <div className="flex items-center justify-between py-6 border-y mb-8">
                <span className="text-2xl font-bold text-foreground mr-4">{isSpanish ? "Compartir:" : "Share:"}</span>
                <SocialShareButtons 
@@ -138,6 +152,8 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
             <PortableText value={body} components={components} />
           </div>
 
+          <AuthorBio authorName={post.authorName} authorImage={post.authorImage} />
+
           <div className="mt-12 pt-8 border-t">
             <h3 className="text-2xl font-bold mb-6">{isSpanish ? "Comparte este artículo" : "Share this article"}</h3>
             <SocialShareButtons 
@@ -149,7 +165,13 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
 
         <div className="lg:col-span-1">
           <div className="sticky top-24">
-            <BlogSidebar tags={tags} showSearch={false} headings={headings} />
+            <BlogSidebar 
+              tags={tags} 
+              showSearch={true} 
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              onSearchSubmit={handleSearchSubmit}
+            />
           </div>
         </div>
       </div>

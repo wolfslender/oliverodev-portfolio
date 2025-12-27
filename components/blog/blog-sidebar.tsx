@@ -69,32 +69,13 @@ export function BlogSidebar({
               className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-9 transition-all"
               value={searchQuery}
               onChange={(e) => onSearchChange?.(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onSearchSubmit?.(searchQuery || "")
+                }
+              }}
             />
           </div>
-        </motion.div>
-      )}
-
-      {headings && headings.length > 0 && (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.05 }}
-          className="bg-card text-card-foreground rounded-xl border shadow-sm p-6"
-        >
-          <h3 className="font-semibold text-lg mb-4">Table of Contents</h3>
-          <nav className="flex flex-col gap-2">
-            {headings.map((heading) => (
-              <a
-                key={heading.slug}
-                href={`#${heading.slug}`}
-                className={`text-sm text-muted-foreground hover:text-primary transition-colors block ${
-                  heading.level === 3 ? "pl-4" : ""
-                }`}
-              >
-                {heading.text}
-              </a>
-            ))}
-          </nav>
         </motion.div>
       )}
 
