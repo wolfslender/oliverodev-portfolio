@@ -43,14 +43,12 @@ export function FeaturedProjects() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[400px]">
+        <div className="flex flex-col gap-6">
           {featuredProjects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.1}>
               <FeaturedProjectCard 
                 {...project} 
-                // Force the first item to be large (full width in a 2-col grid)
-                // and the others to be medium (half width)
-                size={index === 0 ? "large" : "medium"} 
+                size="large" 
               />
             </ScrollReveal>
           ))}
