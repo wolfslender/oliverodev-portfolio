@@ -23,16 +23,19 @@ export function AuthorBio({ authorName, authorImage }: AuthorBioProps) {
       name: "LinkedIn",
       icon: <Linkedin className="w-5 h-5" />,
       url: "https://www.linkedin.com/in/alexis-olivero/",
+      className: "border-[#0077b5] text-[#0077b5] hover:bg-[#0077b5] hover:text-white",
     },
     {
       name: "Instagram",
       icon: <Instagram className="w-5 h-5" />,
       url: "https://www.instagram.com/alexisfit97",
+      className: "border-[#E1306C] text-[#E1306C] hover:bg-[#E1306C] hover:text-white",
     },
     {
       name: "GitHub",
       icon: <Github className="w-5 h-5" />,
       url: "https://github.com/wolfslender",
+      className: "border-foreground text-foreground hover:bg-foreground hover:text-background",
     },
   ]
 
@@ -70,7 +73,7 @@ export function AuthorBio({ authorName, authorImage }: AuthorBioProps) {
                 key={link.name}
                 variant="outline"
                 size="sm"
-                className="rounded-full gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className={`rounded-full gap-2 transition-all duration-300 bg-transparent ${link.className}`}
                 asChild
               >
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
