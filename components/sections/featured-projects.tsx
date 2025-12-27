@@ -1,7 +1,7 @@
 "use client"
 
 import { useSiteData } from "@/hooks/use-site-data"
-import { ProjectCard } from "@/components/project-card"
+import { FeaturedProjectCard } from "@/components/featured-project-card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
@@ -46,7 +46,7 @@ export function FeaturedProjects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[400px]">
           {featuredProjects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.1}>
-              <ProjectCard 
+              <FeaturedProjectCard 
                 {...project} 
                 // Force the first item to be large (full width in a 2-col grid)
                 // and the others to be medium (half width)
