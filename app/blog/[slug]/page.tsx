@@ -17,6 +17,7 @@ const postQuery = groq`
     _id,
     title,
     title_es,
+    slug,
     description,
     description_es,
     publishedAt,

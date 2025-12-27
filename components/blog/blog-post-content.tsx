@@ -9,6 +9,7 @@ import { urlFor } from "@/lib/sanity/client"
 import { formatDate, slugify } from "@/lib/utils"
 import { BlogSidebar } from "@/components/blog/blog-sidebar"
 import { siteConfig } from "@/lib/config"
+import { SocialShareButtons } from "@/components/blog/social-share-buttons"
 
 interface BlogPostContentProps {
   post: any
@@ -123,10 +124,26 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
                 />
               </div>
             )}
+
+            <div className="flex items-center justify-between py-6 border-y mb-8">
+               <span className="text-sm font-medium text-muted-foreground">{isSpanish ? "Compartir:" : "Share:"}</span>
+               <SocialShareButtons 
+                 url={`${siteConfig.url}/blog/${post.slug.current}`} 
+                 title={title} 
+               />
+            </div>
           </div>
 
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <PortableText value={body} components={components} />
+          </div>
+
+          <div className="mt-12 pt-8 border-t">
+            <h3 className="text-lg font-semibold mb-4">{isSpanish ? "Comparte este artículo" : "Share this article"}</h3>
+            <SocialShareButtons 
+                 url={`${siteConfig.url}/blog/${post.slug.current}`} 
+                 title={title} 
+               />
           </div>
         </article>
 
