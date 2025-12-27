@@ -57,7 +57,7 @@ export default function WorkContent() {
       {/* Bento Grid */}
       <section className="px-4 sm:px-6 lg:px-8 mb-32">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-fr">
             {filteredProjects.map((project, index) => (
               <ScrollReveal key={index} delay={index * 100} className={project.size === "large" ? "md:col-span-2 row-span-2" : ""}>
                 {/* @ts-ignore - size is strictly typed in component but data might be loose */}

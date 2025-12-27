@@ -234,7 +234,7 @@ export const projects = [
     github: "https://github.com/wolfslender",
     demo: "https://de.pr.gov/",
     featured: true,
-    size: "large",
+    size: "medium",
   },
   {
     title: "D.Med Healthcare Group",
