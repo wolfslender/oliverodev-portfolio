@@ -9,10 +9,10 @@ interface BlogSidebarProps {
   showSearch?: boolean
   searchQuery?: string
   onSearchChange?: (query: string) => void
+  onSearchSubmit?: (query: string) => void
   selectedTag?: string | null
   onTagSelect?: (tag: string | null) => void
   className?: string
-  headings?: { text: string; slug: string; level: number }[]
 }
 
 const tagColors = [
@@ -46,10 +46,10 @@ export function BlogSidebar({
   showSearch = false,
   searchQuery = "",
   onSearchChange,
+  onSearchSubmit,
   selectedTag,
   onTagSelect,
   className = "",
-  headings,
 }: BlogSidebarProps) {
   return (
     <aside className={`space-y-8 ${className}`}>
