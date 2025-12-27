@@ -221,7 +221,7 @@ export const projects = [
     category: "fullstack",
     github: "#",
     demo: "https://acuastock.com/",
-    featured: true,
+    featured: false,
     size: "large",
   },
   {
@@ -232,7 +232,7 @@ export const projects = [
     category: "fullstack",
     github: "#",
     demo: "https://keiteldeluna.com/",
-    featured: true,
+    featured: false,
     size: "large",
   },
   {
@@ -277,7 +277,7 @@ export const projects = [
     category: "frontend",
     github: "https://github.com/wolfslender",
     demo: "https://www.truenorth.pr/",
-    featured: true,
+    featured: false,
     size: "medium",
   },
   {
@@ -321,7 +321,7 @@ export const projects = [
     category: "frontend",
     github: "https://github.com/wolfslender",
     demo: "https://pre-vue.com/",
-    featured: true,
+    featured: false,
     size: "medium",
   },
 ]
