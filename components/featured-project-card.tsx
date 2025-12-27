@@ -26,14 +26,16 @@ export function FeaturedProjectCard({
   github,
   demo,
   size = "medium",
-}: FeaturedProjectCardProps) {
+  className,
+}: FeaturedProjectCardProps & { className?: string }) {
   const { common } = useSiteData()
 
   return (
     <Card 
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-primary/20",
-        size === "large" ? "md:col-span-2 row-span-2" : "h-full"
+        size === "large" ? "row-span-2" : "h-full",
+        className
       )}
     >
       {/* Image Section */}
