@@ -1,12 +1,26 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Mail, ArrowRight, Calendar } from "lucide-react"
 import { useSiteData } from "@/hooks/use-site-data"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { SocialLinks } from "@/components/social-links"
+import { PopupModal } from "react-calendly"
+import { useSearchParams } from "next/navigation"
 
 export function ContactSection() {
   const { contact, contactPage } = useSiteData()
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    setMounted(true)
+    if (searchParams.get("audit") === "true") {
+      setIsCalendlyOpen(true)
+    }
+  }, [searchParams])
+
   // Construct WhatsApp URL securely
   const getWhatsappUrl = () => {
     const whatsappNumber = contact.phone.replace(/\D/g, "")
@@ -35,11 +49,9 @@ export function ContactSection() {
 
           <div className="flex flex-col gap-6 max-w-md mx-auto">
             {/* Calendly Button */}
-            <a 
-              href="https://calendly.com/alexisolivero" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between p-6 bg-background border border-border rounded-2xl hover:border-purple-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer"
+            <button 
+              onClick={() => setIsCalendlyOpen(true)}
+              className="group flex items-center justify-between p-6 bg-background border border-border rounded-2xl hover:border-purple-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer w-full"
             >
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-purple-500/10 rounded-xl text-purple-500 group-hover:scale-110 transition-transform">
@@ -47,11 +59,11 @@ export function ContactSection() {
                 </div>
                 <div className="text-left">
                   <span className="block font-semibold text-lg">Book a Free Strategy Call</span>
-                  <span className="text-sm text-muted-foreground">15 min video call</span>
+                  <span className="text-sm text-muted-foreground">30 min video call</span>
                 </div>
               </div>
               <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-purple-500 group-hover:translate-x-1 transition-all" />
-            </a>
+            </button>
 
             <a 
               href={`mailto:${contact.email}`}
@@ -93,6 +105,15 @@ export function ContactSection() {
           </div>
         </ScrollReveal>
       </div>
+
+      {mounted && (
+        <PopupModal
+          url={contact.calendly}
+          onModalClose={() => setIsCalendlyOpen(false)}
+          open={isCalendlyOpen}
+          rootElement={document.body}
+        />
+      )}
     </section>
   )
 }

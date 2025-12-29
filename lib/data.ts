@@ -214,6 +214,17 @@ export const certifications = [
 
 export const projects = [
   {
+    title: "Cybernetips",
+    description: "The #1 company globally specialized in immediate response to cybersecurity incidents. Leaders in digital asset recovery and protection.",
+    image: "/projects/cybernetips.png",
+    tags: ["Cybersecurity", "Incident Response", "Digital Recovery", "Fullstack"],
+    category: "fullstack",
+    github: "#",
+    demo: "https://cybernetips.com/",
+    featured: true,
+    size: "large",
+  },
+  {
     title: "Co-Active Training Institute",
     description: "Ongoing fullstack development and maintenance for a global leadership training platform. Responsible for SEO strategies, performance optimization, and implementing new features for a site serving over 150k professionals worldwide.",
     image: "/projects/coactive.jpg",
@@ -400,4 +411,5 @@ export const contact = {
     linkedin: "https://linkedin.com/in/alexis-olivero",
     instagram: "https://www.instagram.com/alexisfit97/",
   },
+  calendly: "https://calendly.com/contact-oliverodev/30min",
 }

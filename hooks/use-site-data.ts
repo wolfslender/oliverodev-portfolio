@@ -31,6 +31,10 @@ export function useSiteData() {
     }
   }), [t])
 
+  const trustedBy = useMemo(() => ({
+    title: t('trustedBy.title', "Trusted by innovative companies")
+  }), [t])
+
   const services = useMemo(() => {
     const servicesData = t('services', { returnObjects: true, defaultValue: defaultServices }) as typeof defaultServices
     return defaultServices.map((service, index) => ({
@@ -248,6 +252,7 @@ export function useSiteData() {
     projects: mappedProjects,
     experience: mappedExperience,
     education: mappedEducation,
-    contact
+    contact,
+    trustedBy
   }
 }

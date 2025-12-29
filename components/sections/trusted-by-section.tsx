@@ -3,43 +3,57 @@
 import { useSiteData } from "@/hooks/use-site-data"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { cn } from "@/lib/utils"
 
 export function TrustedBySection() {
-  // Logos de empresas (placeholders profesionales para el efecto visual)
+  const { trustedBy } = useSiteData()
+
   const companies = [
-    { name: "TechFlow", logo: "https://cdn.worldvectorlogo.com/logos/next-js.svg" },
-    { name: "Vercel", logo: "https://cdn.worldvectorlogo.com/logos/vercel.svg" },
-    { name: "Microsoft", logo: "https://cdn.worldvectorlogo.com/logos/microsoft-5.svg" },
-    { name: "IBM", logo: "https://cdn.worldvectorlogo.com/logos/ibm.svg" },
-    { name: "Google", logo: "https://cdn.worldvectorlogo.com/logos/google-1-1.svg" },
-    { name: "Stripe", logo: "https://cdn.worldvectorlogo.com/logos/stripe-4.svg" },
+    { name: "Cybernetips", logo: "/logos/logo_cybernetips.png", className: "invert" },
+    { name: "Co-Active Training Institute", logo: "/logos/CTI_Logo_Primary-1-png.webp" },
+    { name: "Departamento de Educación PR", logo: "/logos/DEPR-Logo-2025-1.svg" },
+    { name: "AESAN", logo: "/logos/aesan-espanol-logo.svg" },
+    { name: "CST Puerto Rico", logo: "/logos/cst-logo-white-2025.svg", className: "invert" },
+    { name: "GovValue", logo: "/logos/GovValue-Logo.png", className: "invert" },
   ]
 
   return (
-    <section className="py-12 border-b border-border/50 bg-background/50 backdrop-blur-sm">
+    <section className="py-12 border-b border-border/50 bg-background/50 backdrop-blur-sm overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-medium text-muted-foreground mb-8 uppercase tracking-widest">
-          Trusted by innovative companies
+          {trustedBy.title}
         </p>
-        
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-          {companies.map((company, index) => (
-            <motion.div
-              key={company.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="relative h-8 w-24 md:h-10 md:w-32"
-            >
-              <Image
-                src={company.logo}
-                alt={`${company.name} logo`}
-                fill
-                className="object-contain dark:invert"
-              />
-            </motion.div>
-          ))}
+
+        <div className="relative flex overflow-hidden mask-gradient">
+          <div className="flex animate-marquee whitespace-nowrap">
+            {[...companies, ...companies, ...companies, ...companies].map((company, index) => (
+              <div
+                key={`${company.name}-${index}`}
+                className="mx-8 md:mx-16 flex items-center justify-center min-w-[100px] h-12 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+              >
+                <div className="relative h-10 w-32">
+                   <Image
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    fill
+                    className={cn(
+                      "object-contain transition-all duration-300 dark:brightness-0 dark:invert",
+                      company.className
+                    )}
+                    onError={(e) => {
+                      // Fallback if image fails
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      if (target.parentElement) {
+                        target.parentElement.innerText = company.name;
+                        target.parentElement.className = "flex items-center justify-center text-sm font-bold text-muted-foreground whitespace-normal text-center leading-tight";
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 import { ContactSection } from "@/components/sections/contact-section"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { Suspense } from "react"
 
 export default function ContactPage() {
   return (
@@ -40,7 +41,9 @@ export default function ContactPage() {
           }),
         }}
       />
-      <ContactSection />
+      <Suspense fallback={<div className="min-h-[50vh]" />}>
+        <ContactSection />
+      </Suspense>
       <FloatingWhatsApp />
     </div>
   )

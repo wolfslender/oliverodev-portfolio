@@ -12,6 +12,9 @@
       "downloadCv": "Download Corporate Profile"
     }
   },
+  "trustedBy": {
+    "title": "Trusted by innovative companies"
+  },
   "nav": {
     "home": "Home",
     "services": "Services",
@@ -236,7 +239,7 @@
   },
   "projects": [
     {
-      "description": "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments."
+      "description": "The #1 company globally specialized in immediate response to cybersecurity incidents. Leaders in digital asset recovery and protection."
     },
     {
       "description": "Fullstack development for a global leadership platform serving 150k+ professionals. Improved organic traffic by 40% through SEO strategies and reduced server response time by 25%."
@@ -245,13 +248,19 @@
       "description": "Led the digital transformation for Puerto Rico's government portal. Achieved 99.9% uptime and full WCAG 2.1 AA compliance, ensuring accessibility for over 3 million citizens."
     },
     {
+      "description": "Drag-and-drop task management SaaS that reduced user onboarding time by 40%. Features real-time WebSocket collaboration for remote teams."
+    },
+    {
+      "description": "Specialized e-commerce for ornamental fish, aquariums, and accessories. Features product catalog, import services, and comprehensive aquatic supplies."
+    },
+    {
+      "description": "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments."
+    },
+    {
       "description": "Traffic safety platform that processed 50k+ incident reports in its first year. Integrated real-time mapping systems to reduce emergency response times."
     },
     {
       "description": "Corporate migration from WordPress to Webflow that increased page speed scores from 45 to 95. Implemented custom API integrations to automate content updates."
-    },
-    {
-      "description": "Drag-and-drop task management SaaS that reduced user onboarding time by 40%. Features real-time WebSocket collaboration for remote teams."
     },
     {
       "description": "High-performance blog engine built for SEO dominance. Implemented automatic schema generation and pillar content structures that boosted keyword rankings."

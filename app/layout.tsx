@@ -96,9 +96,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.author,
+    url: siteConfig.url,
+    jobTitle: "Frontend Developer",
+    sameAs: [
+      siteConfig.links.github,
+      siteConfig.links.linkedin,
+      siteConfig.links.instagram,
+    ],
+  }
+
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`font-sans antialiased`}>
+      <body className={`${_geist.className} antialiased selection:bg-blue-500/30 selection:text-blue-500`}>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WZCLD4H3QT"
@@ -113,7 +126,17 @@ export default function RootLayout({
             gtag('config', 'G-WZCLD4H3QT');
           `}
         </Script>
-        <ThemeProvider>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <I18nProvider>
             <ScrollProgress />
             <Navigation />

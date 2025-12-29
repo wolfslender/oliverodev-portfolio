@@ -57,7 +57,9 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background/[0.96] antialiased bg-grid-white/[0.02]">
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="currentColor" />
+      <div className="dark:block hidden">
+        <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="currentColor" />
+      </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 md:pt-32">
         <div className="space-y-8 animate-fade-in">
@@ -94,7 +96,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 border-2 hover:bg-muted/50"
+              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 border-2 bg-zinc-200 hover:bg-zinc-300 text-zinc-900 dark:bg-transparent dark:text-foreground dark:hover:bg-muted/50 border-zinc-200 dark:border-input"
             >
               <Link href="/contact">
                 {hero.buttons.secondary}
@@ -105,7 +107,7 @@ export function HeroSection() {
               asChild
               variant="ghost"
               size="lg"
-              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 hover:bg-muted/50"
+              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 dark:bg-transparent dark:text-foreground dark:hover:bg-muted/50"
             >
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download>
                 {hero.buttons.downloadCv}

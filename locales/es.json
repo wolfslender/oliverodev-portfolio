@@ -12,6 +12,9 @@
       "downloadCv": "Descargar Perfil Corporativo"
     }
   },
+  "trustedBy": {
+    "title": "Empresas que han confiado en mí"
+  },
   "nav": {
     "home": "Inicio",
     "services": "Servicios",
@@ -236,7 +239,7 @@
   },
   "projects": [
     {
-      "description": "Profesional certificado con credenciales de IBM y Google. Experto en la construcción de sistemas seguros, gestión de vulnerabilidades y fomento de entornos técnicos eficientes."
+      "description": "La empresa #1 en el mundo especializada en brindar respuestas inmediatas a incidentes de ciberseguridad. Líderes en la recuperación y protección de activos digitales."
     },
     {
       "description": "Desarrollo fullstack para una plataforma de liderazgo global con 150k+ usuarios. Mejoré el tráfico orgánico un 40% mediante estrategias SEO y reduje el tiempo de respuesta del servidor en un 25%."
@@ -245,13 +248,19 @@
       "description": "Lideré la transformación digital del portal gubernamental de Puerto Rico. Logré un 99.9% de uptime y cumplimiento total WCAG 2.1 AA, asegurando accesibilidad para más de 3 millones de ciudadanos."
     },
     {
+      "description": "SaaS de gestión de tareas que redujo el tiempo de onboarding de usuarios un 40%. Cuenta con colaboración en tiempo real vía WebSockets para equipos remotos."
+    },
+    {
+      "description": "E-commerce especializado para peces ornamentales, acuarios y accesorios. Cuenta con catálogo de productos, servicios de importación y suministros acuáticos completos."
+    },
+    {
+      "description": "Profesional certificado con credenciales de IBM y Google. Experto en la construcción de sistemas seguros, gestión de vulnerabilidades y fomento de entornos técnicos eficientes."
+    },
+    {
       "description": "Plataforma de seguridad vial que procesó 50k+ reportes de incidentes en su primer año. Integración de mapas en tiempo real para reducir tiempos de respuesta de emergencia."
     },
     {
       "description": "Migración corporativa de WordPress a Webflow que aumentó la puntuación de velocidad de 45 a 95. Implementé integraciones API personalizadas para automatizar actualizaciones de contenido."
-    },
-    {
-      "description": "SaaS de gestión de tareas que redujo el tiempo de onboarding de usuarios un 40%. Cuenta con colaboración en tiempo real vía WebSockets para equipos remotos."
     },
     {
       "description": "Motor de blog de alto rendimiento construido para dominar en SEO. Implementación de generación automática de esquemas y estructuras de contenido pilar que impulsaron el ranking de keywords."
