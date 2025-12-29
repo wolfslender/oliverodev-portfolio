@@ -23,9 +23,14 @@ const categoriesQuery = groq`
   }
 `
 
+import { siteConfig } from "@/lib/config"
+
 export const metadata = {
   title: "Blog - OliveroDev",
   description: "Insights on Web Development, SEO, and Tech.",
+  alternates: {
+    canonical: `${siteConfig.url}/blog`,
+  },
 }
 
 export default async function BlogPage() {

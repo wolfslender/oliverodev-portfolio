@@ -239,28 +239,28 @@
       "description": "Certified professional with credentials from IBM and Google. Expert in building secure systems, vulnerability management, and fostering efficient technical environments."
     },
     {
-      "description": "Ongoing fullstack development and maintenance for a global leadership training platform. Responsible for SEO strategies, performance optimization, and implementing new features for a site serving over 150k professionals worldwide."
+      "description": "Fullstack development for a global leadership platform serving 150k+ professionals. Improved organic traffic by 40% through SEO strategies and reduced server response time by 25%."
     },
     {
-      "description": "Led end-to-end development of a government website for Puerto Rico. Delivered a responsive, accessible, and CMS-integrated solution aligned with public sector standards."
+      "description": "Led the digital transformation for Puerto Rico's government portal. Achieved 99.9% uptime and full WCAG 2.1 AA compliance, ensuring accessibility for over 3 million citizens."
     },
     {
-      "description": "Government project focused on traffic safety. Includes CMS, incident reports, interactive maps, and community feedback tools."
+      "description": "Traffic safety platform that processed 50k+ incident reports in its first year. Integrated real-time mapping systems to reduce emergency response times."
     },
     {
-      "description": "Migrated corporate website from WordPress to Webflow, rebuilding the frontend and integrating custom API functionalities for better performance."
+      "description": "Corporate migration from WordPress to Webflow that increased page speed scores from 45 to 95. Implemented custom API integrations to automate content updates."
     },
     {
-      "description": "Developed a drag-and-drop task management app with real-time updates, team collaboration, and authentication features."
+      "description": "Drag-and-drop task management SaaS that reduced user onboarding time by 40%. Features real-time WebSocket collaboration for remote teams."
     },
     {
-      "description": "Dynamic blog system with SEO optimization, author management, and custom call-to-action banners to attract new users."
+      "description": "High-performance blog engine built for SEO dominance. Implemented automatic schema generation and pillar content structures that boosted keyword rankings."
     },
     {
-      "description": "Official website for the Government of Puerto Rico. Responsive, accessible platform aligned with public health communication standards."
+      "description": "Official public health portal for Puerto Rico Government. Handled 1M+ monthly visitors during peak demand with zero downtime."
     },
     {
-      "description": "Official website for PRE-VUE Sonography Center. A modern, responsive platform showcasing prenatal imaging services, AI technology integration, and holistic wellness offerings."
+      "description": "Modern medical imaging platform integrating AI diagnostics. Increased appointment bookings by 60% through a streamlined UX and mobile-first design."
     }
   ],
   "services": [

@@ -57,16 +57,15 @@ export function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-300 ${
+                    isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {link.label}
+                  <span className="relative z-10">{link.label}</span>
                   {isActive && (
-                    <span className="absolute inset-0 bg-primary/10 rounded-lg animate-in fade-in zoom-in-95 duration-300" />
-                  )}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-primary to-cyan-500 rounded-full" />
+                    <span
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                    />
                   )}
                 </Link>
               )

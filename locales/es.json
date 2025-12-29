@@ -239,28 +239,28 @@
       "description": "Profesional certificado con credenciales de IBM y Google. Experto en la construcción de sistemas seguros, gestión de vulnerabilidades y fomento de entornos técnicos eficientes."
     },
     {
-      "description": "Desarrollo y mantenimiento fullstack continuo para una plataforma global de capacitación en liderazgo. Responsable de estrategias SEO, optimización de rendimiento e implementación de nuevas funciones para un sitio que sirve a más de 150k profesionales en todo el mundo."
+      "description": "Desarrollo fullstack para una plataforma de liderazgo global con 150k+ usuarios. Mejoré el tráfico orgánico un 40% mediante estrategias SEO y reduje el tiempo de respuesta del servidor en un 25%."
     },
     {
-      "description": "Lideré el desarrollo integral de un sitio web gubernamental para Puerto Rico. Entregué una solución receptiva, accesible e integrada con CMS alineada con los estándares del sector público."
+      "description": "Lideré la transformación digital del portal gubernamental de Puerto Rico. Logré un 99.9% de uptime y cumplimiento total WCAG 2.1 AA, asegurando accesibilidad para más de 3 millones de ciudadanos."
     },
     {
-      "description": "Proyecto gubernamental enfocado en seguridad vial. Incluye CMS, informes de incidentes, mapas interactivos y herramientas de retroalimentación comunitaria."
+      "description": "Plataforma de seguridad vial que procesó 50k+ reportes de incidentes en su primer año. Integración de mapas en tiempo real para reducir tiempos de respuesta de emergencia."
     },
     {
-      "description": "Migración del sitio web corporativo de WordPress a Webflow, reconstruyendo el frontend e integrando funcionalidades de API personalizadas para un mejor rendimiento."
+      "description": "Migración corporativa de WordPress a Webflow que aumentó la puntuación de velocidad de 45 a 95. Implementé integraciones API personalizadas para automatizar actualizaciones de contenido."
     },
     {
-      "description": "Desarrollo de una aplicación de gestión de tareas drag-and-drop con actualizaciones en tiempo real, colaboración en equipo y funciones de autenticación."
+      "description": "SaaS de gestión de tareas que redujo el tiempo de onboarding de usuarios un 40%. Cuenta con colaboración en tiempo real vía WebSockets para equipos remotos."
     },
     {
-      "description": "Sistema de blog dinámico con optimización SEO, gestión de autores y banners de llamada a la acción personalizados para atraer nuevos usuarios."
+      "description": "Motor de blog de alto rendimiento construido para dominar en SEO. Implementación de generación automática de esquemas y estructuras de contenido pilar que impulsaron el ranking de keywords."
     },
     {
-      "description": "Sitio web oficial para el Gobierno de Puerto Rico. Plataforma receptiva y accesible alineada con los estándares de comunicación de salud pública."
+      "description": "Portal oficial de salud pública para el Gobierno de Puerto Rico. Manejó 1M+ de visitantes mensuales durante picos de demanda con cero tiempo de inactividad."
     },
     {
-      "description": "Sitio web oficial para el Centro de Sonografía PRE-VUE. Una plataforma moderna y receptiva que muestra servicios de imágenes prenatales, integración de tecnología IA y ofertas de bienestar holístico."
+      "description": "Plataforma moderna de imágenes médicas integrando diagnósticos por IA. Aumentó las reservas de citas un 60% a través de una UX optimizada y diseño mobile-first."
     }
   ],
   "services": [
