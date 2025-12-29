@@ -13,12 +13,14 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { StatsSection } from "@/components/sections/stats-section"
 import { FeaturedProjects } from "@/components/sections/featured-projects"
 import { SectionDivider } from "@/components/section-divider"
+import { TrustedBySection } from "@/components/sections/trusted-by-section"
 import { CTASection } from "@/components/sections/cta-section"
 
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
       <HeroSection />
+      <TrustedBySection />
       
       <SectionDivider variant="gradient" />
       <StatsSection />

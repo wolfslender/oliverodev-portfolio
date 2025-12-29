@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, ArrowRight } from "lucide-react"
+import { Mail, ArrowRight, Calendar } from "lucide-react"
 import { useSiteData } from "@/hooks/use-site-data"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { SocialLinks } from "@/components/social-links"
@@ -34,6 +34,25 @@ export function ContactSection() {
           </div>
 
           <div className="flex flex-col gap-6 max-w-md mx-auto">
+            {/* Calendly Button */}
+            <a 
+              href="https://calendly.com/alexisolivero" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between p-6 bg-background border border-border rounded-2xl hover:border-purple-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-purple-500/10 rounded-xl text-purple-500 group-hover:scale-110 transition-transform">
+                  <Calendar className="w-6 h-6" />
+                </div>
+                <div className="text-left">
+                  <span className="block font-semibold text-lg">Book a Free Strategy Call</span>
+                  <span className="text-sm text-muted-foreground">15 min video call</span>
+                </div>
+              </div>
+              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-purple-500 group-hover:translate-x-1 transition-all" />
+            </a>
+
             <a 
               href={`mailto:${contact.email}`}
               className="group flex items-center justify-between p-6 bg-background border border-border rounded-2xl hover:border-blue-500/50 hover:shadow-xl transition-all duration-300 cursor-pointer"

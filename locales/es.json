@@ -1,15 +1,15 @@
 {
   "hero": {
     "title": {
-      "prefix": "Construyendo",
-      "highlight": "productos digitales, marcas y experiencias"
+      "prefix": "Deja de perder clientes",
+      "highlight": "por webs lentas y obsoletas."
     },
-    "roles": ["Líder Técnico", "Desarrollador Frontend", "Entusiasta de Seguridad Web", "Arquitecto Cloud"],
-    "description": "Desarrollador Frontend con más de 8 años de experiencia entregando soluciones web de alto impacto. Especializado en WordPress, Webflow y React, con un fuerte enfoque en construir arquitecturas escalables y mantenibles y crear experiencias de usuario excepcionales.",
+    "roles": ["Socio Tecnológico", "Estratega Digital", "Ingeniero de Rendimiento", "Experto en Seguridad"],
+    "description": "Construyo productos digitales de alto rendimiento para empresas que no pueden permitirse tiempos de inactividad o mala UX. Obtén resultados de agencia con la agilidad de un socio senior dedicado.",
     "buttons": {
-      "primary": "Ver Trabajo",
-      "secondary": "Contactarme",
-      "downloadCv": "Descargar CV"
+      "primary": "Ver Cómo Trabajo",
+      "secondary": "Agenda Tu Estrategia Gratis",
+      "downloadCv": "Descargar Perfil Corporativo"
     }
   },
   "nav": {
@@ -21,8 +21,8 @@
     "contact": "Contacto"
   },
   "about": {
-    "title": "Sobre Mí",
-    "description": "Desarrollador apasionado con más de 8 años de experiencia construyendo aplicaciones web modernas. Me encanta convertir problemas complejos en soluciones simples y hermosas.",
+    "title": "Por Qué Trabajar Conmigo",
+    "description": "Cuando contratas una agencia, a menudo te vende el socio senior pero te atiende el pasante junior. Al trabajar conmigo, tienes acceso directo a más de 8 años de experiencia senior. Me convierto en tu socio técnico dedicado, invertido en tu éxito.",
     "experience": "Experiencia",
     "education": "Educación",
     "softSkills": "Habilidades Blandas"
@@ -204,20 +204,20 @@
       "description": "Soluciones expertas adaptadas a tus necesidades comerciales. Desde el desarrollo rápido de MVP hasta arquitectura de grado empresarial."
     },
     "methodology": {
-      "title": "Cómo Trabajo",
-      "description": "Mi enfoque de ingeniería se basa en tres pilares: rendimiento, seguridad y escalabilidad.",
+      "title": "Mi Proceso Probado",
+      "description": "No solo escribo código. Sigo una metodología estructurada que asegura que tu proyecto se entregue a tiempo, dentro del presupuesto y sin errores.",
       "pillars": {
         "cleanArch": {
-          "title": "Arquitectura Limpia",
-          "description": "Escribir código mantenible y documentado que escala con las necesidades de tu negocio y reduce la deuda técnica."
+          "title": "1. Descubrimiento Estratégico",
+          "description": "Definimos tus objetivos comerciales y requerimientos técnicos antes de escribir una sola línea de código. Sin adivinanzas."
         },
         "performance": {
-          "title": "Rendimiento Primero",
-          "description": "Optimización para Core Web Vitals y experiencia de usuario. Tiempos de carga rápidos igualan mejores tasas de conversión."
+          "title": "2. Desarrollo Ágil",
+          "description": "Sprints quincenales con progreso visible. Nunca estarás a oscuras sobre el estado de tu proyecto."
         },
         "security": {
-          "title": "Seguridad por Diseño",
-          "description": "Implementación de protocolos de seguridad estándar desde el primer día para proteger tus datos y usuarios."
+          "title": "3. Lanzamiento y Escalado",
+          "description": "QA riguroso, auditoría de seguridad y una estrategia de despliegue suave diseñada para el crecimiento."
         }
       }
     },
@@ -265,24 +265,24 @@
   ],
   "services": [
     {
-      "title": "Desarrollo Web",
-      "description": "Sitios web personalizados construidos con React, Next.js o WordPress. Rápidos, seguros y optimizados para SEO.",
-      "features": ["Desarrollo Personalizado", "Integración CMS", "Optimización de Rendimiento", "Mejores Prácticas SEO"]
+      "title": "Lanzamiento MVP",
+      "description": "De idea a producto listo para el mercado en 4-6 semanas. Me encargo de toda la tecnología para que te enfoques en conseguir usuarios.",
+      "features": ["Prototipado Rápido", "Arquitectura Escalable", "Configuración BD y Auth", "Estrategia de Lanzamiento"]
     },
     {
-      "title": "Desarrollo Webflow",
-      "description": "Sitios Webflow de alta gama con animaciones e interacciones avanzadas. Perfecto para sitios de marketing.",
-      "features": ["Desarrollo Visual", "Animaciones Complejas", "Configuración CMS", "Diseño Pixel-Perfect"]
+      "title": "Escalado Corporativo",
+      "description": "Refactorización y optimización de plataformas legacy para alto tráfico. Mejoro velocidad, seguridad y mantenibilidad para necesidades empresariales.",
+      "features": ["Auditoría de Código", "Ajuste de Rendimiento", "Endurecimiento de Seguridad", "Capacitación de Equipos"]
     },
     {
-      "title": "Optimización de Rendimiento",
-      "description": "Acelera tu sitio web existente. Mejora Core Web Vitals, retención de usuarios y rankings en Google.",
-      "features": ["Reducción de Tiempo de Carga", "Optimización de Imágenes", "Minificación de Código", "Estrategias de Caché"]
+      "title": "Migración a Webflow",
+      "description": "Mueve tu sitio de marketing a Webflow para total libertad de diseño y hosting sin mantenimiento. Perfecto para equipos de marketing.",
+      "features": ["Diseño Pixel-Perfect", "Arquitectura CMS", "Migración SEO", "Entrenamiento del Equipo"]
     },
     {
-      "title": "Seguridad Cloud y Web",
-      "description": "Gestión segura de servidores (Azure/AWS), estrategias de despliegue e implementación de protocolos de seguridad estrictos.",
-      "features": ["Gestión Azure/AWS", "Auditorías de Seguridad", "Endurecimiento de Servidores", "Pipelines de Despliegue"]
+      "title": "Partnership Técnico",
+      "description": "Un retainer mensual para empresas que necesitan un socio nivel CTO dedicado sin el costo de un salario a tiempo completo.",
+      "features": ["Soporte Prioritario", "Auditorías Mensuales", "Desarrollo de Features", "Consultoría Estratégica"]
     }
   ]
 }

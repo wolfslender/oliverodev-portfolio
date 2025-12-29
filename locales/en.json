@@ -1,15 +1,15 @@
 {
   "hero": {
     "title": {
-      "prefix": "Building digital",
-      "highlight": "products, brands, and experiences"
+      "prefix": "Stop losing customers",
+      "highlight": "to slow, outdated websites."
     },
-    "roles": ["Tech Lead", "Frontend Developer", "Web Security Enthusiast", "Cloud Architect"],
-    "description": "Frontend Developer with over 8 years of experience delivering high-impact web solutions. Specialized in WordPress, Webflow, and React, with a strong focus on building scalable, maintainable architectures and crafting exceptional user experiences.",
+    "roles": ["Tech Partner", "Digital Strategist", "Performance Engineer", "Security Expert"],
+    "description": "I build high-performance digital products for businesses that can't afford downtime or bad UX. Get agency-level results with the agility of a dedicated senior partner.",
     "buttons": {
-      "primary": "View Work",
-      "secondary": "Contact Me",
-      "downloadCv": "Download CV"
+      "primary": "See How I Work",
+      "secondary": "Book Free Strategy Call",
+      "downloadCv": "Download Corporate Profile"
     }
   },
   "nav": {
@@ -21,8 +21,8 @@
     "contact": "Contact"
   },
   "about": {
-    "title": "About Me",
-    "description": "Passionate developer with 8+ years of experience building modern web applications. I love turning complex problems into simple, beautiful solutions.",
+    "title": "Why Work With Me",
+    "description": "When you hire an agency, you often get sold by the senior partner but serviced by the junior intern. When you work with me, you get direct access to 8+ years of senior expertise. I become your dedicated technical partner, invested in your success.",
     "experience": "Experience",
     "education": "Education",
     "softSkills": "Soft Skills"
@@ -204,20 +204,20 @@
       "description": "Expert solutions tailored to your business needs. From rapid MVP development to enterprise-grade architecture, I deliver scalable and secure digital products."
     },
     "methodology": {
-      "title": "How I Work",
-      "description": "My engineering approach is built on three pillars: performance, security, and scalability.",
+      "title": "My Proven Process",
+      "description": "I don't just write code. I follow a structured methodology that ensures your project is delivered on time, on budget, and bug-free.",
       "pillars": {
         "cleanArch": {
-          "title": "Clean Architecture",
-          "description": "Writing maintainable, self-documenting code that scales with your business needs and reduces technical debt."
+          "title": "1. Strategic Discovery",
+          "description": "We define your business goals and technical requirements before writing a single line of code. No guesswork."
         },
         "performance": {
-          "title": "Performance First",
-          "description": "Optimizing for Core Web Vitals and user experience. Fast load times equal better conversion rates."
+          "title": "2. Agile Development",
+          "description": "Bi-weekly sprints with visible progress. You're never in the dark about where your project stands."
         },
         "security": {
-          "title": "Security by Design",
-          "description": "Implementing industry-standard security protocols from day one to protect your data and users."
+          "title": "3. Launch & Scale",
+          "description": "Rigorous QA, security auditing, and a smooth deployment strategy designed for growth."
         }
       }
     },
@@ -265,24 +265,24 @@
   ],
   "services": [
     {
-      "title": "Web Development",
-      "description": "Custom websites built with React, Next.js, or WordPress. Fast, secure, and SEO-optimized.",
-      "features": ["Custom Development", "CMS Integration", "Performance Optimization", "SEO Best Practices"]
+      "title": "MVP Launchpad",
+      "description": "Go from idea to market-ready product in 4-6 weeks. I handle the full tech stack so you can focus on user acquisition.",
+      "features": ["Rapid Prototyping", "Scalable Architecture", "Auth & Database Setup", "Launch Strategy"]
     },
     {
-      "title": "Webflow Development",
-      "description": "High-end Webflow sites with advanced animations and interactions. Perfect for marketing sites.",
-      "features": ["Visual Development", "Complex Animations", "CMS Setup", "Pixel-Perfect Design"]
+      "title": "Corporate Scaling",
+      "description": "Refactoring and optimizing legacy platforms for high traffic. I improve speed, security, and maintainability for enterprise needs.",
+      "features": ["Code Audit", "Performance Tuning", "Security Hardening", "Team Training"]
     },
     {
-      "title": "Performance Optimization",
-      "description": "Speed up your existing website. Improve Core Web Vitals, user retention, and Google rankings.",
-      "features": ["Load Time Reduction", "Image Optimization", "Code Minification", "Caching Strategies"]
+      "title": "Webflow Migration",
+      "description": "Move your marketing site to Webflow for total design freedom and zero-maintenance hosting. Perfect for marketing teams.",
+      "features": ["Pixel-Perfect Design", "CMS Architecture", "SEO Migration", "Team Training"]
     },
     {
-      "title": "Cloud & Web Security",
-      "description": "Secure server management (Azure/AWS), deployment strategies, and implementation of strict security protocols for digital assets.",
-      "features": ["Azure/AWS Management", "Security Audits", "Server Hardening", "Deployment Pipelines"]
+      "title": "Technical Partnership",
+      "description": "A monthly retainer for businesses that need a dedicated CTO-level partner without the full-time salary overhead.",
+      "features": ["Priority Support", "Monthly Audits", "Feature Development", "Strategic Consulting"]
     }
   ]
 }

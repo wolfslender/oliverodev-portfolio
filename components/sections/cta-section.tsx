@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail, Sparkles, MessageSquare } from "lucide-react"
+import { ArrowRight, Mail, Sparkles, MessageSquare, Video } from "lucide-react"
 import Link from "next/link"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { useSiteData } from "@/hooks/use-site-data"
@@ -49,12 +49,18 @@ export function CTASection() {
                      {ctaSection.primaryButton} <MessageSquare className="ml-2 w-5 h-5" />
                    </Link>
                  </Button>
+                 
+                 {/* Lead Magnet Button */}
                  <Button asChild variant="outline" size="lg" className="rounded-full text-lg h-14 px-8 w-full sm:w-auto hover:bg-muted/50 transition-all hover:scale-105 duration-300 border-2">
-                   <Link href="/work">
-                     {ctaSection.secondaryButton} <ArrowRight className="ml-2 w-5 h-5" />
+                   <Link href="/contact?audit=true">
+                     Free Web Audit <Video className="ml-2 w-5 h-5" />
                    </Link>
                  </Button>
                </div>
+               
+               <p className="text-xs text-muted-foreground pt-4 opacity-80">
+                 Not ready to buy? <Link href="/contact?audit=true" className="underline hover:text-blue-500">Get a free 5-min video audit of your current site.</Link>
+               </p>
             </div>
          </div>
        </ScrollReveal>
