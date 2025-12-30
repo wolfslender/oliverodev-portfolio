@@ -5,8 +5,13 @@ import { Mail, ArrowRight, Calendar } from "lucide-react"
 import { useSiteData } from "@/hooks/use-site-data"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { SocialLinks } from "@/components/social-links"
-import { PopupModal } from "react-calendly"
 import { useSearchParams } from "next/navigation"
+import dynamic from "next/dynamic"
+
+const PopupModal = dynamic(
+  () => import("react-calendly").then((mod) => mod.PopupModal),
+  { ssr: false }
+)
 
 export function ContactSection() {
   const { contact, contactPage } = useSiteData()

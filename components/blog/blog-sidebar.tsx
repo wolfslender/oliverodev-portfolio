@@ -2,7 +2,6 @@
 
 import { Badge } from "@/components/ui/badge"
 import { Search } from "lucide-react"
-import { motion } from "framer-motion"
 
 interface BlogSidebarProps {
   tags: string[]
@@ -54,11 +53,8 @@ export function BlogSidebar({
   return (
     <aside className={`space-y-8 ${className}`}>
       {showSearch && (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-card text-card-foreground rounded-xl border shadow-sm p-6"
+        <div 
+          className="bg-card text-card-foreground rounded-xl border shadow-sm p-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
         >
           <h3 className="font-semibold text-lg mb-4">Search</h3>
           <div className="relative">
@@ -76,14 +72,11 @@ export function BlogSidebar({
               }}
             />
           </div>
-        </motion.div>
+        </div>
       )}
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="bg-card text-card-foreground rounded-xl border shadow-sm p-6"
+      <div 
+        className="bg-card text-card-foreground rounded-xl border shadow-sm p-6 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100"
       >
         <div className="flex justify-between items-center mb-4">
           <h3 className="font-semibold text-lg">Tags</h3>
@@ -103,13 +96,9 @@ export function BlogSidebar({
               const colorClass = getTagColor(tag)
               
               return (
-                <motion.div
+                <div
                   key={tag}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="transition-transform duration-300 hover:scale-105 active:scale-95"
                 >
                   <Badge 
                     variant="outline" 
@@ -122,14 +111,14 @@ export function BlogSidebar({
                   >
                     {tag}
                   </Badge>
-                </motion.div>
+                </div>
               )
             })
           ) : (
             <p className="text-sm text-muted-foreground">No tags available.</p>
           )}
         </div>
-      </motion.div>
+      </div>
     </aside>
   )
 }

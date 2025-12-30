@@ -57,7 +57,7 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background/[0.96] antialiased bg-grid-white/[0.02]">
-      <div className="dark:block hidden">
+      <div className="hidden md:dark:block">
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="currentColor" />
       </div>
       

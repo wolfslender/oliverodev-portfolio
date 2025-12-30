@@ -3,7 +3,6 @@
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation()
@@ -23,10 +22,8 @@ export function LanguageSwitcher() {
   const isSpanish = i18n.language.startsWith("es")
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      className="fixed bottom-36 right-5 z-40"
+    <div
+      className="fixed bottom-36 right-5 z-40 animate-in fade-in zoom-in duration-300"
     >
       <Button
         onClick={toggleLanguage}
@@ -39,6 +36,6 @@ export function LanguageSwitcher() {
           {isSpanish ? "EN" : "ES"}
         </span>
       </Button>
-    </motion.div>
+    </div>
   )
 }

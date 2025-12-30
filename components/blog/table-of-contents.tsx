@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
 import { useTranslation } from "react-i18next"
 
 interface TableOfContentsProps {
@@ -14,11 +14,8 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   if (!headings || headings.length === 0) return null
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="my-10 bg-card/50 text-card-foreground rounded-xl border p-6 backdrop-blur-sm"
+    <div 
+      className="my-10 bg-card/50 text-card-foreground rounded-xl border p-6 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-500"
     >
       <h3 className="font-bold text-xl mb-4 border-b pb-2">
         {isSpanish ? "Tabla de Contenido" : "Table of Contents"}
@@ -37,6 +34,6 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
           </a>
         ))}
       </nav>
-    </motion.div>
+    </div>
   )
 }

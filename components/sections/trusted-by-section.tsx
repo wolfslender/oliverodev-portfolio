@@ -1,7 +1,6 @@
 "use client"
 
 import { useSiteData } from "@/hooks/use-site-data"
-import { motion } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
@@ -36,6 +35,8 @@ export function TrustedBySection() {
                     src={company.logo}
                     alt={`${company.name} logo`}
                     fill
+                    sizes="(max-width: 768px) 100px, 150px"
+                    loading="lazy"
                     className={cn(
                       "object-contain transition-all duration-300 dark:brightness-0 dark:invert",
                       company.className

@@ -7,7 +7,6 @@ import { formatDate } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BlogSidebar } from "./blog-sidebar"
 import { urlFor } from "@/lib/sanity/client"
-import { motion, AnimatePresence } from "framer-motion"
 import { useTranslation } from "react-i18next"
 
 interface Post {
@@ -43,18 +42,13 @@ export function BlogList({ posts, tags }: BlogListProps) {
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
       <div className="lg:col-span-3">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
             {filteredPosts.length > 0 ? (
               filteredPosts.map((post, index) => {
                  const title = isSpanish && post.title_es ? post.title_es : post.title
                  return (
-                <motion.div
+                <div
                   key={post._id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className="animate-in fade-in zoom-in duration-300"
                 >
                   <Link href={`/blog/${post.slug.current}`}>
                     <Card className="h-full hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden group border-muted/60">
@@ -89,13 +83,11 @@ export function BlogList({ posts, tags }: BlogListProps) {
                       </CardContent>
                     </Card>
                   </Link>
-                </motion.div>
+                </div>
               )})
             ) : (
-              <motion.div 
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }}
-                className="col-span-full text-center py-16 text-muted-foreground bg-muted/30 rounded-xl border border-dashed"
+              <div 
+                className="col-span-full text-center py-16 text-muted-foreground bg-muted/30 rounded-xl border border-dashed animate-in fade-in"
               >
                 <p className="text-lg font-medium">No posts found</p>
                 <p className="text-sm mt-1">Try adjusting your search or filters</p>
@@ -105,9 +97,8 @@ export function BlogList({ posts, tags }: BlogListProps) {
                 >
                   Clear all filters
                 </button>
-              </motion.div>
+              </div>
             )}
-          </AnimatePresence>
         </div>
       </div>
 

@@ -4,7 +4,7 @@ const nextConfig = {
     // ignoreBuildErrors: false,
   },
   images: {
-    unoptimized: true,
+    // unoptimized: true, // Disabled to enable Next.js Image Optimization
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
@@ -13,10 +13,10 @@ const nextConfig = {
       },
     ],
   },
-  output: 'export',
-  trailingSlash: true,
+  // output: 'export', // Disabled to allow dynamic features and image optimization
+  // trailingSlash: true,
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizePackageImports: ['lucide-react'],
   },
 }
 

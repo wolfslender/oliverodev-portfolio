@@ -4,7 +4,6 @@ import { Briefcase, GraduationCap } from "lucide-react"
 import { useSiteData } from "@/hooks/use-site-data"
 import { SectionHeader } from "@/components/ui/section-header"
 import { Timeline } from "@/components/ui/timeline"
-import { motion } from "framer-motion"
 
 export function AboutSection() {
   const { experience, education, softSkills, about } = useSiteData()
@@ -58,12 +57,8 @@ export function AboutSection() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {softSkills.map((skill, index) => (
-              <motion.div
+              <div
                 key={skill.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="group flex flex-col items-center p-6 bg-card backdrop-blur-sm border border-border/50 rounded-2xl border-t-4 border-t-transparent hover:border-t-blue-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
               >
                 {/* Decorative gradient background opacity on hover */}
@@ -77,7 +72,7 @@ export function AboutSection() {
                     {skill.label}
                   </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
