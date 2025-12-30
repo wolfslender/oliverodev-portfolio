@@ -3,8 +3,9 @@ const nextConfig = {
   typescript: {
     // ignoreBuildErrors: false,
   },
+  output: 'export',
   images: {
-    // unoptimized: true, // Disabled to enable Next.js Image Optimization
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
@@ -13,7 +14,6 @@ const nextConfig = {
       },
     ],
   },
-  // output: 'export', // Disabled to allow dynamic features and image optimization
   // trailingSlash: true,
   experimental: {
     optimizePackageImports: ['lucide-react'],
