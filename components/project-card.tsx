@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 import { cn } from "@/lib/utils"
 import { useSiteData } from "@/hooks/use-site-data"
 
@@ -41,7 +41,7 @@ export function ProjectCard({
         "relative w-full overflow-hidden",
         size === "large" ? "h-64 md:h-[400px]" : "h-56"
       )}>
-        <Image
+        <ExportedImage
           src={image}
           alt={title}
           fill

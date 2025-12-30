@@ -1,7 +1,7 @@
 "use client"
 
 import { useSiteData } from "@/hooks/use-site-data"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 import { cn } from "@/lib/utils"
 
 export function TrustedBySection() {
@@ -31,7 +31,7 @@ export function TrustedBySection() {
                 className="mx-8 md:mx-16 flex items-center justify-center min-w-[100px] h-12 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
               >
                 <div className="relative h-10 w-32">
-                   <Image
+                   <ExportedImage
                     src={company.logo}
                     alt={`${company.name} logo`}
                     fill
@@ -41,7 +41,7 @@ export function TrustedBySection() {
                       "object-contain transition-all duration-300 dark:brightness-0 dark:invert",
                       company.className
                     )}
-                    onError={(e) => {
+                    onError={(e: any) => {
                       // Fallback if image fails
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
