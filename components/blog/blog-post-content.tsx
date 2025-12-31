@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import { PortableText } from "@portabletext/react"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { urlFor } from "@/lib/sanity/client"
@@ -116,7 +116,7 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
                 <div className="flex items-center gap-2">
                     {post.authorImage && (
                         <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                             <Image src={urlFor(post.authorImage).url()} alt={post.authorName} fill className="object-cover" />
+                             <ExportedImage src={urlFor(post.authorImage).url()} alt={post.authorName} fill className="object-cover" />
                         </div>
                     )}
                     <span>{post.authorName}</span>
@@ -127,7 +127,7 @@ export function BlogPostContent({ post, tags }: BlogPostContentProps) {
 
             {post.mainImage && (
               <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-10 border">
-                <Image
+                <ExportedImage
                   src={urlFor(post.mainImage).url()}
                   alt={title}
                   fill

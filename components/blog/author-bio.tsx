@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 import { useTranslation } from "react-i18next"
 import { Github, Linkedin, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -46,7 +46,7 @@ export function AuthorBio({ authorName, authorImage }: AuthorBioProps) {
         <div className="shrink-0">
           <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-background shadow-md">
             {authorImage ? (
-              <Image 
+              <ExportedImage 
                 src={urlFor(authorImage).url()} 
                 alt={authorName} 
                 fill 

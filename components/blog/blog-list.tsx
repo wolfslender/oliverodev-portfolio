@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 import { formatDate } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BlogSidebar } from "./blog-sidebar"
@@ -54,7 +54,7 @@ export function BlogList({ posts, tags }: BlogListProps) {
                     <Card className="h-full hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden group border-muted/60">
                       {post.mainImage && (
                         <div className="relative h-48 w-full overflow-hidden">
-                          <Image
+                          <ExportedImage
                             src={urlFor(post.mainImage).url()}
                             alt={title}
                             fill
