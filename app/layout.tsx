@@ -14,6 +14,18 @@ import { BackToTop } from "@/components/back-to-top"
 import { AvailabilityBadge } from "@/components/availability-badge"
 import "./globals.css"
 
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OliveroDev",
+  "url": "https://oliverodev.com",
+  "logo": "https://oliverodev.com/icon.svg",
+  "sameAs": [
+    "https://github.com/wolfslender",
+    "https://linkedin.com/in/alexisolivero"
+  ]
+}
+
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
@@ -76,8 +88,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: ["/icon.svg"],
+    apple: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
   },
 }
 
@@ -138,6 +155,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <I18nProvider>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+            />
             <ScrollProgress />
             <Navigation />
             <BackToTop />
