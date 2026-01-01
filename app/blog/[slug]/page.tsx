@@ -35,7 +35,8 @@ const categoriesQuery = groq`
   }
 `
 
-export const dynamicParams = false
+export const dynamicParams = true // Allow new pages to be generated on demand
+export const revalidate = 60 // Revalidate every 60 seconds
 
 export async function generateStaticParams() {
   try {

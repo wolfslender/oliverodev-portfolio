@@ -33,6 +33,8 @@ export const metadata = {
   },
 }
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 export default async function BlogPage() {
   // If we don't have a project ID yet, show a placeholder
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
