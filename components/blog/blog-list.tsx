@@ -31,9 +31,12 @@ export function BlogList({ posts, tags }: BlogListProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
 
+  console.log('BlogList received posts:', posts)
+
   const filteredPosts = posts.filter((post) => {
     const title = isSpanish && post.title_es ? post.title_es : post.title
-    const matchesSearch = title.toLowerCase().includes(searchQuery.toLowerCase())
+    const safeTitle = title || ""
+    const matchesSearch = safeTitle.toLowerCase().includes(searchQuery.toLowerCase())
     const matchesTag = selectedTag ? post.categories?.includes(selectedTag) : true
     return matchesSearch && matchesTag
   })

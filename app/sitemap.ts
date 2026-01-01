@@ -27,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   // Fetch blog posts
-  const query = groq`*[_type == "post"] {
+  const query = groq`*[_type == "post" && defined(slug.current)] {
     "slug": slug.current,
     publishedAt,
     _updatedAt
