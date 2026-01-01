@@ -4,7 +4,7 @@ import { BlogList } from "@/components/blog/blog-list"
 
 // Query to get posts
 const postsQuery = groq`
-  *[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+  *[_type == "post"] | order(publishedAt desc) {
     _id,
     title,
     title_es,

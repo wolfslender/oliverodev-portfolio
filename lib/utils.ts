@@ -11,6 +11,7 @@ export function formatDate(dateString: string) {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
+    timeZone: 'UTC', // Fix hydration mismatch by enforcing consistent timezone
   })
 }
 

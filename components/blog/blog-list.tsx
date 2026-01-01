@@ -41,17 +41,30 @@ export function BlogList({ posts, tags }: BlogListProps) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      {/* Debug Info - Visible in dev/staging */}
+      <div className="col-span-full mb-4 p-4 bg-muted/20 rounded border text-xs font-mono">
+        <p>Debug: Total posts received: {posts.length}</p>
+        <ul>
+          {posts.map(p => (
+            <li key={p._id}>
+              {p.title} (Slug: {p.slug?.current || 'MISSING'})
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <div className="lg:col-span-3">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredPosts.length > 0 ? (
               filteredPosts.map((post, index) => {
                  const title = isSpanish && post.title_es ? post.title_es : post.title
+                 const slug = post.slug?.current || '#'
                  return (
                 <div
                   key={post._id}
                   className="animate-in fade-in zoom-in duration-300"
                 >
-                  <Link href={`/blog/${post.slug.current}`}>
+                  <Link href={slug !== '#' ? `/blog/${slug}` : '#'} className={slug === '#' ? 'cursor-not-allowed opacity-70' : ''}>
                     <Card className="h-full hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden group border-muted/60">
                       {post.mainImage && (
                         <div className="relative h-48 w-full overflow-hidden">
