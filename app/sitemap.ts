@@ -3,7 +3,7 @@ import { siteConfig } from '@/lib/config'
 import { client } from '@/lib/sanity/client'
 import { groq } from 'next-sanity'
 
-export const revalidate = 3600 // Revalidate every hour
+export const dynamic = 'force-static'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
