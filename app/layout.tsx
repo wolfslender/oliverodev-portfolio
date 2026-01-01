@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
 import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { siteConfig } from "@/lib/config"
 import { ThemeProvider } from "@/components/theme-provider"
 import { I18nProvider } from "@/components/i18n-provider"
@@ -250,7 +249,6 @@ export default function RootLayout({
             {children}
             <Footer />
             <LanguageSwitcher />
-            <Analytics />
           </I18nProvider>
         </ThemeProvider>
       </body>

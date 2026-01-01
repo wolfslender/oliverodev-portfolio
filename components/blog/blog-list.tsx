@@ -41,18 +41,6 @@ export function BlogList({ posts, tags }: BlogListProps) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-      {/* Debug Info - Visible in dev/staging */}
-      <div className="col-span-full mb-4 p-4 bg-muted/20 rounded border text-xs font-mono">
-        <p>Debug: Total posts received: {posts.length}</p>
-        <ul>
-          {posts.map(p => (
-            <li key={p._id}>
-              {p.title} (Slug: {p.slug?.current || 'MISSING'})
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <div className="lg:col-span-3">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredPosts.length > 0 ? (
