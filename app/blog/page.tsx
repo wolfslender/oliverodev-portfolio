@@ -45,8 +45,8 @@ export default async function BlogPage() {
   }
 
   const [posts, categories] = await Promise.all([
-    client.fetch(postsQuery),
-    client.fetch(categoriesQuery)
+    client.fetch(postsQuery, {}, { next: { revalidate: 0 } }),
+    client.fetch(categoriesQuery, {}, { next: { revalidate: 0 } })
   ])
 
   const tags = categories.map((cat: any) => cat.title)

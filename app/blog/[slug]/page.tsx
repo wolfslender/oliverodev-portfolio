@@ -42,7 +42,7 @@ export async function generateStaticParams() {
   try {
     if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
        const query = groq`*[_type == "post"]{ "slug": slug.current }`
-       const slugs = await client.fetch(query)
+       const slugs = await client.fetch(query, {}, { next: { revalidate: 0 } })
        if (slugs && Array.isArray(slugs) && slugs.length > 0) {
          return slugs.map((slug: any) => ({ slug: slug.slug }))
        }
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return { title: 'Blog Post' }
 
   try {
-    const post = await client.fetch(postQuery, { slug })
+    const post = await client.fetch(postQuery, { slug }, { next: { revalidate: 0 } })
     if (!post) return { title: 'Not Found' }
 
     return {
@@ -109,8 +109,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     
     if (safeSlug) {
       const [postResult, categoriesResult] = await Promise.all([
-        client.fetch(postQuery, { slug: safeSlug }),
-        client.fetch(categoriesQuery)
+        client.fetch(postQuery, { slug: safeSlug }, { next: { revalidate: 0 } }),
+        client.fetch(categoriesQuery, {}, { next: { revalidate: 0 } })
       ])
       post = postResult
       categories = categoriesResult
