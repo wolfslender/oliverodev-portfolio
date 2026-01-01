@@ -35,7 +35,8 @@ const categoriesQuery = groq`
   }
 `
 
-export const dynamicParams = false
+// export const dynamicParams = false // Removed to fix build error with output: export
+// export const revalidate = 60 // Removed to fix build error with output: export
 
 export async function generateStaticParams() {
   try {

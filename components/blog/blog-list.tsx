@@ -31,8 +31,6 @@ export function BlogList({ posts, tags }: BlogListProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
 
-  console.log('BlogList received posts:', posts)
-
   const filteredPosts = posts.filter((post) => {
     const title = isSpanish && post.title_es ? post.title_es : post.title
     const safeTitle = title || ""

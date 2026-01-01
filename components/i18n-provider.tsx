@@ -8,33 +8,37 @@ import en from "@/locales/en.json"
 import es from "@/locales/es.json"
 
 i18next
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
       en: { translation: en },
       es: { translation: es },
     },
+    lng: "en", // Force initial language to match server (SSG/SSR)
     fallbackLng: "en",
     interpolation: {
       escapeValue: false,
     },
-    detection: {
-      order: ["localStorage"],
-      caches: ["localStorage"],
-    },
   })
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false)
-
   useEffect(() => {
-    setMounted(true)
+    // Client-side only language detection to avoid hydration mismatch
+    const detectLanguage = async () => {
+      const savedLng = localStorage.getItem("i18nextLng")
+      if (savedLng && savedLng !== i18next.language) {
+        await i18next.changeLanguage(savedLng)
+      } else {
+        // If no saved language, try navigator but default to 'en' if not Spanish
+        const browserLng = navigator.language
+        if (browserLng.startsWith("es") && i18next.language !== "es") {
+          await i18next.changeLanguage("es")
+        }
+      }
+    }
+    
+    detectLanguage()
   }, [])
-
-  if (!mounted) {
-    return <>{children}</>
-  }
 
   return <I18nextProvider i18n={i18next}>{children}</I18nextProvider>
 }

@@ -55,12 +55,8 @@ export default async function BlogPage() {
     <div className="container py-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="mb-12 text-center">
         <h1 className="text-4xl font-bold mb-4">Blog</h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto mb-2">
+        <p className="text-muted-foreground max-w-2xl mx-auto">
           Thoughts, tutorials, and insights on frontend development, SEO, and building digital products.
-        </p>
-        {/* Debug info - can be removed later */}
-        <p className="text-xs text-muted-foreground opacity-50">
-          Total posts: {posts.length}
         </p>
       </div>
 
