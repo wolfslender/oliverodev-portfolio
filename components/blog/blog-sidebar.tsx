@@ -1,7 +1,9 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import { Search } from "lucide-react"
+import { Search, Tag, Sparkles, Mail, X } from "lucide-react"
+import { useState } from "react"
+import { toast } from "sonner"
 
 interface BlogSidebarProps {
   tags: string[]
@@ -50,75 +52,187 @@ export function BlogSidebar({
   onTagSelect,
   className = "",
 }: BlogSidebarProps) {
+  const [showModal, setShowModal] = useState(false)
+  const [email, setEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!email || !email.includes('@')) {
+      toast.error('Please enter a valid email address')
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        toast.success('Successfully subscribed! Check your email to confirm.')
+        setEmail('')
+        setShowModal(false)
+      } else {
+        toast.error(data.error || 'Something went wrong')
+      }
+    } catch (error) {
+      toast.error('Failed to subscribe. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
-    <aside className={`space-y-8 ${className}`}>
-      {showSearch && (
-        <div 
-          className="bg-card text-card-foreground rounded-xl border shadow-sm p-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
-        >
-          <h3 className="font-semibold text-lg mb-4">Search</h3>
-          <div className="relative">
-            <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder="Search posts..."
-              className="flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-9 transition-all"
-              value={searchQuery}
-              onChange={(e) => onSearchChange?.(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  onSearchSubmit?.(searchQuery || "")
-                }
-              }}
-            />
+    <>
+      <aside className={`space-y-6 ${className}`}>
+        {showSearch && (
+          <div className="bg-card text-card-foreground rounded-3xl border-2 border-border/50 shadow-lg p-6 hover:border-primary/30 transition-all duration-300">
+            <div className="flex items-center gap-2 mb-4">
+              <Search className="w-5 h-5 text-primary" />
+              <h3 className="font-bold text-lg">Search Articles</h3>
+            </div>
+            <div className="relative">
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <input
+                type="text"
+                placeholder="Search posts..."
+                className="flex h-11 w-full rounded-xl border-2 border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 pl-9 transition-all font-medium"
+                value={searchQuery}
+                onChange={(e) => onSearchChange?.(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    onSearchSubmit?.(searchQuery || "")
+                  }
+                }}
+              />
+            </div>
+          </div>
+        )}
+
+        <div className="bg-card text-card-foreground rounded-3xl border-2 border-border/50 shadow-lg p-6 hover:border-primary/30 transition-all duration-300">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <Tag className="w-5 h-5 text-primary" />
+              <h3 className="font-bold text-lg">Topics</h3>
+            </div>
+            {selectedTag && (
+              <button
+                onClick={() => onTagSelect?.(null)}
+                className="text-xs font-semibold text-primary hover:underline transition-all"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {tags.length > 0 ? (
+              tags.map((tag, index) => {
+                const isSelected = selectedTag === tag
+                const colorClass = getTagColor(tag)
+
+                return (
+                  <div
+                    key={tag}
+                    className="transition-transform duration-300 hover:scale-105 active:scale-95"
+                  >
+                    <Badge
+                      variant="outline"
+                      className={`cursor-pointer px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${isSelected
+                          ? "bg-primary text-primary-foreground border-primary shadow-lg scale-105"
+                          : `${colorClass} hover:shadow-md`
+                        }`}
+                      onClick={() => onTagSelect?.(isSelected ? null : tag)}
+                    >
+                      {tag}
+                    </Badge>
+                  </div>
+                )
+              })
+            ) : (
+              <p className="text-sm text-muted-foreground italic">No topics available.</p>
+            )}
+          </div>
+        </div>
+
+        {/* Newsletter CTA */}
+        <div className="relative overflow-hidden bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-8 text-white shadow-xl">
+          <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+          <div className="relative z-10">
+            <Sparkles className="w-8 h-8 mb-4" />
+            <h3 className="font-black text-xl mb-2">Stay Updated</h3>
+            <p className="text-sm text-white/90 mb-4 leading-relaxed">
+              Get notified when I publish new insights on web development and performance.
+            </p>
+            <button
+              onClick={() => setShowModal(true)}
+              className="w-full bg-white text-primary font-bold py-3 px-6 rounded-xl hover:bg-slate-100 transition-all hover:scale-105 active:scale-95 shadow-lg"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      {/* Subscription Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-card rounded-3xl max-w-md w-full p-8 shadow-2xl animate-in zoom-in duration-200 relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                <Mail className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-black mb-2">Subscribe to Newsletter</h3>
+              <p className="text-muted-foreground">
+                Get the latest insights on web development delivered to your inbox.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubscribe} className="space-y-4">
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold mb-2">
+                  Email Address
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex h-12 w-full rounded-xl border-2 border-input bg-background px-4 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all font-medium"
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-primary-foreground font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                {isSubmitting ? 'Subscribing...' : 'Subscribe Now'}
+              </button>
+
+              <p className="text-xs text-muted-foreground text-center">
+                By subscribing, you agree to receive emails from me. Unsubscribe anytime.
+              </p>
+            </form>
           </div>
         </div>
       )}
-
-      <div 
-        className="bg-card text-card-foreground rounded-xl border shadow-sm p-6 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100"
-      >
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="font-semibold text-lg">Tags</h3>
-          {selectedTag && (
-            <button 
-              onClick={() => onTagSelect?.(null)}
-              className="text-xs text-muted-foreground hover:text-primary transition-colors"
-            >
-              Clear filter
-            </button>
-          )}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {tags.length > 0 ? (
-            tags.map((tag, index) => {
-              const isSelected = selectedTag === tag
-              const colorClass = getTagColor(tag)
-              
-              return (
-                <div
-                  key={tag}
-                  className="transition-transform duration-300 hover:scale-105 active:scale-95"
-                >
-                  <Badge 
-                    variant="outline" 
-                    className={`cursor-pointer px-3 py-1.5 text-sm transition-all duration-300 border ${
-                      isSelected 
-                        ? "bg-primary text-primary-foreground border-primary shadow-md scale-105" 
-                        : `${colorClass} hover:shadow-sm`
-                    }`}
-                    onClick={() => onTagSelect?.(isSelected ? null : tag)}
-                  >
-                    {tag}
-                  </Badge>
-                </div>
-              )
-            })
-          ) : (
-            <p className="text-sm text-muted-foreground">No tags available.</p>
-          )}
-        </div>
-      </div>
-    </aside>
+    </>
   )
 }
