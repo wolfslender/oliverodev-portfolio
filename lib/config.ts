@@ -57,19 +57,19 @@ export const siteConfig = {
       quote: "Alexis transformed our digital presence. His attention to detail and technical expertise in Wordpress and WebFlow is unparalleled.",
       author: "Antonio Gonzales",
       role: "CEO Cybernetips",
-      image: "https://i.pravatar.cc/150?u=antonio"
+      image: "/logos/logo_cybernetips.png"
     },
     {
       quote: "The best frontend developer I've worked with. He doesn't just write code; he builds solutions that scale.",
       author: "Maria Arentz",
       role: "GovValue",
-      image: "https://i.pravatar.cc/150?u=maria"
+      image: "/logos/GovValue-Logo.png"
     },
     {
       quote: "Delivered a complex government portal ahead of schedule with 100% accessibility compliance. Impressive work.",
       author: "Truenorth Corp",
       role: "Enterprise Partners",
-      image: "https://i.pravatar.cc/150?u=truenorth"
+      image: "/logos/truenorth_logo_white.png"
     }
   ],
   agencyMethodology: [
