@@ -56,6 +56,8 @@ export function BlogSidebar({
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  const FORMSPREE_URL = "https://formspree.io/f/mjgkynjd"
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -67,20 +69,22 @@ export function BlogSidebar({
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/subscribe', {
+      const response = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify({ email }),
       })
-
-      const data = await response.json()
 
       if (response.ok) {
         toast.success('Successfully subscribed! Check your email to confirm.')
         setEmail('')
         setShowModal(false)
       } else {
-        toast.error(data.error || 'Something went wrong')
+        const data = await response.json()
+        toast.error(data.errors?.[0]?.message || 'Something went wrong')
       }
     } catch (error) {
       toast.error('Failed to subscribe. Please try again.')
@@ -146,7 +150,7 @@ export function BlogSidebar({
                       variant="outline"
                       className={`cursor-pointer px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${isSelected
                           ? "bg-primary text-primary-foreground border-primary shadow-lg scale-105"
-                          : `${colorClass} hover:shadow-md`
+                          : `${colorClass} hover:shadow-sm`
                         }`}
                       onClick={() => onTagSelect?.(isSelected ? null : tag)}
                     >
@@ -208,6 +212,7 @@ export function BlogSidebar({
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="your@email.com"
                   value={email}
