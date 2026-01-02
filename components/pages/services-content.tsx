@@ -16,13 +16,13 @@ export default function ServicesContent() {
   const getMiniCaseStudy = (serviceTitle: string) => {
     const sTitle = serviceTitle.toLowerCase()
 
-    if (sTitle.includes("web development")) return projects.find(p => p.title.includes("Co-Active"))
-    if (sTitle.includes("mvp launchpad")) return projects.find(p => p.title.includes("Cybernetips"))
-    if (sTitle.includes("webflow migration")) return projects.find(p => p.title.includes("Truenorth"))
-    if (sTitle.includes("technical partnership")) return projects.find(p => p.title.includes("GovValue"))
-    if (sTitle.includes("security") || sTitle.includes("cloud")) return projects.find(p => p.title.includes("Departamento de Educación"))
+    if (sTitle.includes("web development") || sTitle.includes("desarrollo web")) return projects.find(p => p.title.includes("Co-Active"))
+    if (sTitle.includes("mvp") || sTitle.includes("lanzamiento")) return projects.find(p => p.title.includes("Cybernetips"))
+    if (sTitle.includes("webflow") || sTitle.includes("migración")) return projects.find(p => p.title.includes("CST"))
+    if (sTitle.includes("partnership") || sTitle.includes("socio")) return projects.find(p => p.title.includes("GovValue"))
+    if (sTitle.includes("security") || sTitle.includes("seguridad") || sTitle.includes("cloud")) return projects.find(p => p.title.includes("Departamento de Educación"))
 
-    return projects.find(p => p.title.includes("Co-Active")) || projects[0]
+    return projects.find(p => p.title.includes("CST")) || projects[0]
   }
 
   return (
