@@ -10,7 +10,6 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn: false,
-  perspective: 'published', // Force fetching only published content
 })
 
 const builder = createImageUrlBuilder(client)

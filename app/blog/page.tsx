@@ -4,7 +4,7 @@ import { BlogList } from "@/components/blog/blog-list"
 
 // Query to get posts
 const postsQuery = groq`
-  *[_type == "post"] | order(publishedAt desc) {
+  *[_type == "post"] {
     _id,
     title,
     title_es,
@@ -44,10 +44,15 @@ export default async function BlogPage() {
     )
   }
 
-  const [posts, categories] = await Promise.all([
+  const [postsRaw, categories] = await Promise.all([
     client.fetch(postsQuery),
     client.fetch(categoriesQuery)
   ])
+
+  // Sort posts manually to ensure we don't lose any due to GROQ ordering quirks
+  const posts = postsRaw.sort((a: any, b: any) => {
+    return new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
+  })
 
   console.log(`Build Debug: Blog Index fetched ${posts.length} posts`)
   if (posts.length > 0) {
