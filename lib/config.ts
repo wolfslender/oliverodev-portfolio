@@ -54,22 +54,22 @@ export const siteConfig = {
   ],
   testimonials: [
     {
-      quote: "Alexis transformed our digital presence. His attention to detail and technical expertise in React and Next.js is unparalleled.",
-      author: "Sarah Johnson",
-      role: "CTO at TechFlow",
-      image: "https://i.pravatar.cc/150?u=sarah"
+      quote: "Alexis transformed our digital presence. His attention to detail and technical expertise in Wordpress and WebFlow is unparalleled.",
+      author: "Antonio Gonzales",
+      role: "CEO Cybernetips",
+      image: "https://i.pravatar.cc/150?u=antonio"
     },
     {
       quote: "The best frontend developer I've worked with. He doesn't just write code; he builds solutions that scale.",
-      author: "Michael Chen",
-      role: "Founder of Creative Pulse",
-      image: "https://i.pravatar.cc/150?u=michael"
+      author: "Maria Arentz",
+      role: "GovValue",
+      image: "https://i.pravatar.cc/150?u=maria"
     },
     {
       quote: "Delivered a complex government portal ahead of schedule with 100% accessibility compliance. Impressive work.",
-      author: "Elena Rodriguez",
-      role: "Product Manager at GovPR",
-      image: "https://i.pravatar.cc/150?u=elena"
+      author: "Truenorth Corp",
+      role: "Enterprise Partners",
+      image: "https://i.pravatar.cc/150?u=truenorth"
     }
   ],
   agencyMethodology: [
