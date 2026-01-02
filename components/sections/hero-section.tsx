@@ -11,75 +11,40 @@ import { cn } from "@/lib/utils"
 
 export function HeroSection() {
   const { hero } = useSiteData()
-  const [typedText, setTypedText] = useState("")
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
-
-  useEffect(() => {
-    let charIndex = 0
-    let isDeleting = false
-    let timeoutId: NodeJS.Timeout
-
-    const type = () => {
-      const currentRole = hero.roles[currentRoleIndex]
-
-      if (!isDeleting) {
-        setTypedText(currentRole.substring(0, charIndex + 1))
-        charIndex++
-
-        if (charIndex === currentRole.length) {
-          timeoutId = setTimeout(() => {
-            isDeleting = true
-            type()
-          }, 2000)
-            return
-        }
-
-        timeoutId = setTimeout(type, 100)
-      } else {
-        setTypedText(currentRole.substring(0, charIndex - 1))
-        charIndex--
-
-        if (charIndex === 0) {
-          isDeleting = false
-          setCurrentRoleIndex((prev) => (prev + 1) % hero.roles.length)
-          timeoutId = setTimeout(type, 500)
-          return
-        }
-
-        timeoutId = setTimeout(type, 50)
-      }
-    }
-
-    timeoutId = setTimeout(type, 500)
-
-    return () => clearTimeout(timeoutId)
-  }, [currentRoleIndex, hero.roles])
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background/[0.96] antialiased bg-grid-white/[0.02]">
       <div className="dark:block">
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="currentColor" />
       </div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 md:pt-32">
-        <div className="space-y-8 animate-fade-in">
-          
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight text-balance drop-shadow-sm">
-            {hero.title.prefix} <br className="hidden md:block" />
-            <span className="text-gradient">
-              {hero.title.highlight}
-            </span>
-          </h1>
 
-          <div className="h-8 md:h-12 flex items-center justify-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium tracking-wide">
-              I am a {typedText}
-              <span className="animate-pulse text-primary">_</span>
-            </h2>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 md:pt-40">
+        <div className="space-y-12 animate-fade-in">
+
+          <div className="space-y-6">
+            <h1 className="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter text-balance leading-[0.9]">
+              {hero.title.prefix} <br className="hidden md:block" />
+              <span className="text-gradient">
+                {hero.title.highlight}
+              </span>
+            </h1>
+
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {hero.roles.map((role, idx) => (
+                <div key={role} className="flex items-center gap-3">
+                  <span className="text-sm md:text-base font-black uppercase tracking-[0.2em] text-primary/80">
+                    {role}
+                  </span>
+                  {idx < hero.roles.length - 1 && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-border" />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
-             {hero.description}
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed font-medium">
+            {hero.description}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -102,7 +67,7 @@ export function HeroSection() {
                 {hero.buttons.secondary}
               </Link>
             </Button>
-            
+
             <Button
               asChild
               variant="ghost"

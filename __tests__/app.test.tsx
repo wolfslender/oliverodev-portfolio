@@ -47,7 +47,7 @@ describe('Footer Component', () => {
     expect(screen.getAllByText('Services')[0]).toBeDefined()
 
     // Check if the new service is visible in the list
-    expect(screen.getByText('Technical Partnership')).toBeDefined()
+    expect(screen.getByText('Partnership Técnico')).toBeDefined()
 
     // Check if Quick Links exist
     expect(screen.getByText('Quick Links')).toBeDefined()

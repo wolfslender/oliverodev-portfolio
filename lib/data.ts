@@ -50,11 +50,11 @@ export const services = [
 
 export const hero = {
   title: {
-    prefix: "Building digital",
-    highlight: "products, brands, and experiences",
+    prefix: "Engineering Strategic",
+    highlight: "Digital Foundations",
   },
-  roles: ["Tech Lead", "Frontend Developer", "Web Security Enthusiast", "Cloud Architect"],
-  description: "Frontend Developer with over 8 years of experience delivering high-impact web solutions. Specialized in WordPress, Webflow, and React, with a strong focus on building scalable, maintainable architectures and crafting exceptional user experiences.",
+  roles: ["Senior Fullstack Engineer", "Technical Strategist", "Cloud Architect", "Elite Web Developer"],
+  description: "Transforming complex business challenges into high-performance, secure, and scalable digital assets. We architect the infrastructure that allows global market leaders to dominate their industry through superior engineering.",
   buttons: {
     primary: "View Work",
     secondary: "Contact Me",
