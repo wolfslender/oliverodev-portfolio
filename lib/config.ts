@@ -54,7 +54,7 @@ export const siteConfig = {
   ],
   testimonials: [
     {
-      quote: "Alexis transformed our digital presence. His attention to detail and technical expertise in Wordpress and WebFlow is unparalleled.",
+      quote: "Alexis transformed our digital presence. His attention to detail and technical expertise in Wordpress is unparalleled.",
       author: "Antonio Gonzales",
       role: "CEO Cybernetips",
       image: "/logos/logo_cybernetips.png"
