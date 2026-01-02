@@ -2,11 +2,11 @@ import { Code, Users, Award, Coffee, Code2, Server, Database, GitBranch, Palette
 
 export const services = [
   {
-    title: "Web Development",
-    description: "Custom websites built with React, Next.js, or WordPress. Fast, secure, and SEO-optimized.",
+    title: "Escalado Corporativo",
+    description: "Refactorización y optimización de plataformas legadas para alto tráfico. Mejoro la velocidad, seguridad y mantenibilidad para necesidades empresariales.",
     icon: Code2,
-    features: ["Custom Development", "CMS Integration", "Performance Optimization", "SEO Best Practices"],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind"],
+    features: ["Auditoría de Código", "Optimización de Rendimiento", "Refuerzo de Seguridad", "Entrenamiento del Equipo"],
+    technologies: ["WordPress", "CSS", "JS", "PHP"],
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
   },
