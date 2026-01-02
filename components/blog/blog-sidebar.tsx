@@ -1,7 +1,7 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import { Search, Tag, Sparkles, Mail, X } from "lucide-react"
+import { Search, Tag, Sparkles, Mail, X, Loader2 } from "lucide-react"
 import { useState } from "react"
 import { toast } from "sonner"
 
@@ -56,7 +56,10 @@ export function BlogSidebar({
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const FORMSPREE_URL = "https://formspree.io/f/mjgkynjd"
+  // Mailchimp Config from hidden fields
+  const U_VALUE = "d115a5e75b31c0484490081e3"
+  const ID_VALUE = "011f42ce9d"
+  const FID_VALUE = "00ba66e7f0"
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -68,29 +71,41 @@ export function BlogSidebar({
 
     setIsSubmitting(true)
 
-    try {
-      const response = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({ email }),
-      })
+    // JSONP Implementation for Static Sites (No CORS issues)
+    const callbackName = `jsonp_callback_${Math.round(100000 * Math.random())}`
+    const url = `https://oliverodev.us19.list-manage.com/subscribe/post-json?u=${U_VALUE}&id=${ID_VALUE}&f_id=${FID_VALUE}&EMAIL=${encodeURIComponent(email)}&c=${callbackName}`
 
-      if (response.ok) {
-        toast.success('Successfully subscribed! Check your email to confirm.')
-        setEmail('')
-        setShowModal(false)
-      } else {
-        const data = await response.json()
-        toast.error(data.errors?.[0]?.message || 'Something went wrong')
+    // Create script tag for JSONP
+    const script = document.createElement('script')
+    script.src = url
+
+      // Define global callback
+      ; (window as any)[callbackName] = (data: any) => {
+        delete (window as any)[callbackName]
+        document.body.removeChild(script)
+
+        setIsSubmitting(false)
+
+        if (data.result === 'success') {
+          toast.success(data.msg || 'Successfully subscribed!')
+          setEmail('')
+          setShowModal(false)
+        } else {
+          // Sanitize Mailchimp error messages (often contain HTML)
+          const errorMsg = data.msg?.replace(/<[^>]*>?/gm, '') || 'Something went wrong'
+          toast.error(errorMsg)
+        }
       }
-    } catch (error) {
-      toast.error('Failed to subscribe. Please try again.')
-    } finally {
+
+    // Handle network errors
+    script.onerror = () => {
+      delete (window as any)[callbackName]
+      document.body.removeChild(script)
       setIsSubmitting(false)
+      toast.error('Connection error. Please try again later.')
     }
+
+    document.body.appendChild(script)
   }
 
   return (
@@ -191,6 +206,7 @@ export function BlogSidebar({
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors"
+              disabled={isSubmitting}
             >
               <X className="w-5 h-5" />
             </button>
@@ -226,9 +242,16 @@ export function BlogSidebar({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary text-primary-foreground font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full bg-primary text-primary-foreground font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? 'Subscribing...' : 'Subscribe Now'}
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Subscribing...
+                  </>
+                ) : (
+                  'Subscribe Now'
+                )}
               </button>
 
               <p className="text-xs text-muted-foreground text-center">
