@@ -4,6 +4,7 @@ const nextConfig = {
     // ignoreBuildErrors: false,
   },
   output: 'export',
+  trailingSlash: true,
   images: {
     loader: 'custom',
     loaderFile: './image-loader.ts',
