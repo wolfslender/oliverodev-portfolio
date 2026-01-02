@@ -6,10 +6,10 @@ export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-03-20'
 
 export const client = createClient({
-  projectId: projectId || 'placeholder', // Use a placeholder to prevent build failure
+  projectId: projectId || 'placeholder',
   dataset,
   apiVersion,
-  useCdn: false,
+  useCdn: false, // Ensure fresh data is fetched during build
 })
 
 const builder = createImageUrlBuilder(client)

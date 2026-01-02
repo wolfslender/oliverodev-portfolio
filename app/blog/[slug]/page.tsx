@@ -43,7 +43,6 @@ export async function generateStaticParams() {
     if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
        const query = groq`*[_type == "post"]{ "slug": slug.current }`
        const slugs = await client.fetch(query)
-       console.log(`Build Debug: Found ${slugs?.length || 0} post slugs for generation`)
        if (slugs && Array.isArray(slugs) && slugs.length > 0) {
          return slugs.map((slug: any) => ({ slug: slug.slug }))
        }

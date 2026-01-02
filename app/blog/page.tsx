@@ -54,11 +54,6 @@ export default async function BlogPage() {
     return new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
   })
 
-  console.log(`Build Debug: Blog Index fetched ${posts.length} posts`)
-  if (posts.length > 0) {
-    console.log(`Build Debug: Post titles: ${posts.map((p: any) => p.title).join(', ')}`)
-  }
-
   const tags = categories.map((cat: any) => cat.title)
 
   return (
