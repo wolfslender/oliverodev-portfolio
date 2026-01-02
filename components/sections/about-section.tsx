@@ -59,7 +59,7 @@ export function AboutSection() {
             {softSkills.map((skill, index) => (
               <div
                 key={skill.label}
-                className="group flex flex-col items-center p-6 bg-card backdrop-blur-sm border border-border/50 rounded-2xl border-t-4 border-t-transparent hover:border-t-blue-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                className="group flex flex-col items-center p-6 bg-card backdrop-blur-sm rounded-2xl border-t-4 border-t-transparent hover:border-t-blue-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
               >
                 {/* Decorative gradient background opacity on hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 bg-gradient-to-b from-blue-500 to-cyan-500" />

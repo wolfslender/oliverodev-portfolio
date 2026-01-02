@@ -46,7 +46,7 @@ export function Navigation() {
             className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-primary transition-colors group"
           >
             <Sparkles className="h-5 w-5 text-primary group-hover:rotate-180 transition-transform duration-500" />
-            <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">OliveroDev</span>
+            <span className="text-gradient">OliveroDev</span>
           </Link>
 
           {/* Desktop Navigation - Modern design with active indicators */}

@@ -64,17 +64,17 @@ export function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 md:pt-32">
         <div className="space-y-8 animate-fade-in">
           
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight text-balance">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight text-balance drop-shadow-sm">
             {hero.title.prefix} <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+            <span className="text-gradient">
               {hero.title.highlight}
             </span>
           </h1>
 
           <div className="h-8 md:h-12 flex items-center justify-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium">
+            <h2 className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium tracking-wide">
               I am a {typedText}
-              <span className="animate-pulse text-blue-500">_</span>
+              <span className="animate-pulse text-primary">_</span>
             </h2>
           </div>
 
@@ -86,7 +86,7 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/20"
+              className="shimmer w-full sm:w-auto rounded-full text-lg h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:scale-105 active:scale-95"
             >
               <Link href="/work">
                 {hero.buttons.primary}
@@ -96,7 +96,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 border-2 bg-zinc-200 hover:bg-zinc-300 text-zinc-900 dark:bg-transparent dark:text-foreground dark:hover:bg-muted/50 border-zinc-200 dark:border-input"
+              className="w-full sm:w-auto rounded-full text-lg h-12 px-8 border bg-background/50 backdrop-blur-sm hover:bg-accent/50 text-foreground transition-all hover:scale-105 active:scale-95"
             >
               <Link href="/contact">
                 {hero.buttons.secondary}

@@ -53,7 +53,7 @@ export function BlogList({ posts, tags }: BlogListProps) {
                   className="animate-in fade-in zoom-in duration-300"
                 >
                   <Link href={slug !== '#' ? `/blog/${slug}` : '#'} className={slug === '#' ? 'cursor-not-allowed opacity-70' : ''}>
-                    <Card className="h-full hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden group border-muted/60">
+                    <Card className="h-full hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden group">
                       {post.mainImage && (
                         <div className="relative h-48 w-full overflow-hidden">
                           <ExportedImage
