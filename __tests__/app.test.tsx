@@ -42,16 +42,16 @@ describe('Data Integrity', () => {
 describe('Footer Component', () => {
   it('renders Services section correctly', () => {
     render(<Footer />)
-    
+
     // Check if "Services" header exists
     expect(screen.getAllByText('Services')[0]).toBeDefined()
 
     // Check if the new service is visible in the list
-    expect(screen.getByText('Cloud & Web Security')).toBeDefined()
-    
+    expect(screen.getByText('Technical Partnership')).toBeDefined()
+
     // Check if Quick Links exist
     expect(screen.getByText('Quick Links')).toBeDefined()
-    
+
     // Check legal pages
     expect(screen.getByText('Privacy Policy')).toBeDefined()
     expect(screen.getByText('Terms of Service')).toBeDefined()

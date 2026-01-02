@@ -15,31 +15,19 @@ describe('ContactSection', () => {
   it('renders the contact options', () => {
     render(<ContactSection />)
     expect(screen.getByText(/Let's Work Together/i)).toBeDefined()
-    expect(screen.getByText(/Email Me/i)).toBeDefined()
-    expect(screen.getByText(/WhatsApp Me/i)).toBeDefined()
-    expect(screen.getByText(/Or connect with me on social media/i)).toBeDefined()
+    expect(screen.getByText(/Send an Email/i)).toBeDefined()
+    expect(screen.getByText(/Book a Strategy Call/i)).toBeDefined()
+    expect(screen.getByText(/Connect on Professional Networks/i)).toBeDefined()
   })
 
-  it('contains secure links for email and whatsapp', () => {
-    // Mock window.open
-    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null)
-    
+  it('contains correctly formatted links for email and whatsapp', () => {
     render(<ContactSection />)
-    
-    const emailLink = screen.getByText(/Email Me/i).closest('a')
-    // Should be obfuscated in DOM
-    expect(emailLink?.getAttribute('href')).toBe('#')
-    
+
+    const emailLink = screen.getByText(/Send an Email/i).closest('a')
+    expect(emailLink?.getAttribute('href')).toContain('mailto:')
+
+    // WhatsApp link check
     const whatsappLink = screen.getByText(/WhatsApp Me/i).closest('a')
-    // Should be obfuscated in DOM
-    expect(whatsappLink?.getAttribute('href')).toBe('#')
-    
-    // Verify click triggers WhatsApp open
-    if (whatsappLink) {
-      fireEvent.click(whatsappLink)
-      expect(openSpy).toHaveBeenCalledWith(expect.stringContaining('https://wa.me/'), '_blank')
-    }
-    
-    openSpy.mockRestore()
+    expect(whatsappLink?.getAttribute('href')).toContain('https://wa.me/')
   })
 })

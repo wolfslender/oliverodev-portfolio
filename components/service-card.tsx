@@ -31,10 +31,10 @@ export function ServiceCard({
 }: ServiceCardProps) {
   const { common } = useSiteData()
   return (
-    <Card className={`flex flex-col h-full p-8 hover:shadow-xl transition-all duration-300 border-border/50 group bg-card/50 backdrop-blur-sm relative overflow-hidden border-t-4 ${color.replace('text-', 'border-')} hover:-translate-y-1`}>
+    <Card className={`flex flex-col h-full p-8 transition-all duration-500 border-border/50 group bg-card/50 backdrop-blur-sm relative overflow-hidden border-t-4 ${color.replace('text-', 'border-')} hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5 active:scale-[0.98]`}>
       {/* Decorative gradient blob */}
       <div className={`absolute top-0 right-0 w-64 h-64 ${bgColor} blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
-      
+
       <div className="flex items-start justify-between mb-6 relative z-10">
         <div className={`p-4 ${bgColor} rounded-2xl transition-transform duration-300 group-hover:scale-110 shadow-sm`}>
           <Icon className={`w-8 h-8 ${color}`} />

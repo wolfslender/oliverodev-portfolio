@@ -11,19 +11,13 @@ import { Footer } from "@/components/sections/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { BackToTop } from "@/components/back-to-top"
 import { AvailabilityBadge } from "@/components/availability-badge"
+import {
+  getPersonSchema,
+  getOrganizationSchema,
+  getWebSiteSchema,
+  getProfessionalServiceSchema
+} from "@/lib/seo"
 import "./globals.css"
-
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "OliveroDev",
-  "url": "https://oliverodev.com",
-  "logo": "https://oliverodev.com/icon.svg",
-  "sameAs": [
-    "https://github.com/wolfslender",
-    "https://linkedin.com/in/alexisolivero"
-  ]
-}
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -114,19 +108,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: siteConfig.author,
-    url: siteConfig.url,
-    jobTitle: "Frontend Developer",
-    sameAs: [
-      siteConfig.links.github,
-      siteConfig.links.linkedin,
-      siteConfig.links.instagram,
-    ],
-  }
-
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className={`${_geist.className} antialiased selection:bg-blue-500/30 selection:text-blue-500`}>
@@ -144,11 +125,29 @@ export default function RootLayout({
             gtag('config', 'G-WZCLD4H3QT');
           `}
         </Script>
+
+        {/* Global SEO Schemas */}
         <Script
-          id="json-ld"
+          id="schema-person"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getPersonSchema()) }}
         />
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getOrganizationSchema()) }}
+        />
+        <Script
+          id="schema-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebSiteSchema()) }}
+        />
+        <Script
+          id="schema-service"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getProfessionalServiceSchema()) }}
+        />
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -156,99 +155,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <I18nProvider>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-            />
             <ScrollProgress />
             <Navigation />
             <BackToTop />
             <AvailabilityBadge />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "Person",
-                  name: siteConfig.author,
-                  url: siteConfig.url,
-                  image: siteConfig.ogImage,
-                  sameAs: [
-                    siteConfig.links.github,
-                    siteConfig.links.linkedin,
-                    siteConfig.links.instagram,
-                  ],
-                  jobTitle: "Frontend Developer",
-                  worksFor: {
-                    "@type": "Organization",
-                    name: "Freelance",
-                  },
-                  description: siteConfig.description,
-                  knowsAbout: ["React", "Next.js", "Webflow", "WordPress", "SEO", "Cybersecurity"],
-                }),
-              }}
-            />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "WebSite",
-                  url: siteConfig.url,
-                  name: siteConfig.name,
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: `${siteConfig.url}/search?q={search_term_string}`,
-                    "query-input": "required name=search_term_string",
-                  },
-                }),
-              }}
-            />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "Organization",
-                  name: siteConfig.name,
-                  url: siteConfig.url,
-                  logo: siteConfig.ogImage,
-                  sameAs: [
-                    siteConfig.links.github,
-                    siteConfig.links.linkedin,
-                    siteConfig.links.instagram,
-                  ],
-                }),
-              }}
-            />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "ProfessionalService",
-                  name: siteConfig.name,
-                  url: siteConfig.url,
-                  areaServed: "Remote",
-                  serviceType: "Web Development",
-                  provider: {
-                    "@type": "Person",
-                    name: siteConfig.author,
-                  },
-                  sameAs: [
-                    siteConfig.links.github,
-                    siteConfig.links.linkedin,
-                    siteConfig.links.instagram,
-                  ],
-                  contactPoint: {
-                    "@type": "ContactPoint",
-                    email: siteConfig.links.email,
-                    contactType: "customer service",
-                  },
-                }),
-              }}
-            />
+
             {children}
+
             <Footer />
             <LanguageSwitcher />
           </I18nProvider>

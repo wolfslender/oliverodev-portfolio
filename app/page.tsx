@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/config"
 import { HeroSection } from "@/components/sections/hero-section"
 import { TrustedBySection } from "@/components/sections/trusted-by-section"
 import { SectionDivider } from "@/components/section-divider"
+import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import dynamic from 'next/dynamic'
 
 // Dynamically import heavy sections below the fold
@@ -27,12 +28,14 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <HeroSection />
       <TrustedBySection />
-      
+
       <SectionDivider variant="gradient" />
       <StatsSection />
 
       <SectionDivider variant="wave" />
       <FeaturedProjects />
+
+      <TestimonialsSection />
 
       <SectionDivider variant="gradient" />
       <CTASection />

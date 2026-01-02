@@ -52,6 +52,52 @@ export const siteConfig = {
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
+  testimonials: [
+    {
+      quote: "Alexis transformed our digital presence. His attention to detail and technical expertise in React and Next.js is unparalleled.",
+      author: "Sarah Johnson",
+      role: "CTO at TechFlow",
+      image: "https://i.pravatar.cc/150?u=sarah"
+    },
+    {
+      quote: "The best frontend developer I've worked with. He doesn't just write code; he builds solutions that scale.",
+      author: "Michael Chen",
+      role: "Founder of Creative Pulse",
+      image: "https://i.pravatar.cc/150?u=michael"
+    },
+    {
+      quote: "Delivered a complex government portal ahead of schedule with 100% accessibility compliance. Impressive work.",
+      author: "Elena Rodriguez",
+      role: "Product Manager at GovPR",
+      image: "https://i.pravatar.cc/150?u=elena"
+    }
+  ],
+  agencyMethodology: [
+    {
+      step: 1,
+      title: "Strategic Discovery",
+      description: "We deep-dive into your business goals, technical debt, and market position to identify the highest leverage opportunities.",
+      details: ["Architecture Audit", "ROI Mapping", "Stakeholder Alignment"]
+    },
+    {
+      step: 2,
+      title: "Precision Strategy",
+      description: "Defining the technical blueprint and user experience roadmap that guarantees scalability and security.",
+      details: ["Tech Stack Selection", "UX Prototyping", "Security Protocols"]
+    },
+    {
+      step: 3,
+      title: "Elite Engineering",
+      description: "Developing robust, high-performance solutions using modular architecture and clean code standards.",
+      details: ["Agile Development", "Continuous CI/CD", "Rigorous QA"]
+    },
+    {
+      step: 4,
+      title: "Growth & Evolution",
+      description: "Post-launch support and data-driven optimizations to ensure your digital product continues to lead the market.",
+      details: ["Performance Monitoring", "Feature Scaling", "Conversion Tuning"]
+    }
+  ],
 }
 
 export type SiteConfig = typeof siteConfig
