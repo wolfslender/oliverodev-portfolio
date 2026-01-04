@@ -56,13 +56,15 @@ export function BlogList({ posts, tags }: BlogListProps) {
               {/* Image Side */}
               {featuredPost.mainImage && (
                 <div className="relative h-[400px] lg:h-[600px] overflow-hidden">
-                  <ExportedImage
-                    src={urlFor(featuredPost.mainImage).url()}
-                    alt={isSpanish && featuredPost.title_es ? featuredPost.title_es : featuredPost.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent lg:from-transparent lg:via-transparent lg:to-slate-950/80" />
+                  <Link href={`/blog/${featuredPost.slug?.current || '#'}`} className="block w-full h-full">
+                    <ExportedImage
+                      src={urlFor(featuredPost.mainImage).url()}
+                      alt={isSpanish && featuredPost.title_es ? featuredPost.title_es : featuredPost.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent lg:from-transparent lg:via-transparent lg:to-slate-950/80" />
+                  </Link>
                 </div>
               )}
 
@@ -74,7 +76,9 @@ export function BlogList({ posts, tags }: BlogListProps) {
                 </Badge>
 
                 <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
-                  {isSpanish && featuredPost.title_es ? featuredPost.title_es : featuredPost.title}
+                  <Link href={`/blog/${featuredPost.slug?.current || '#'}`} className="hover:text-primary transition-colors">
+                    {isSpanish && featuredPost.title_es ? featuredPost.title_es : featuredPost.title}
+                  </Link>
                 </h2>
 
                 <div className="flex items-center gap-6 mb-8 text-slate-400">
